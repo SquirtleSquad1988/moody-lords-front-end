@@ -54,10 +54,10 @@ const onSignOut = function (event) {
 };
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
-  $('#change-password').on('submit', onChangePassword);
-  $('.navbar-render').on('click', '#exit', onSignOut);
+  $('.main-body').on('submit', '#sign-up', onSignUp);
+  $('.main-body').on('submit', '#sign-in', onSignIn);
+  $('.main-body').on('submit', '#change-password', onChangePassword);
+  $('.navbar').on('click', '#exit', onSignOut);
 };
 
 module.exports = {

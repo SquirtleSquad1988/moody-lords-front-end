@@ -1,11 +1,13 @@
 'use strict';
 
+const showHeader = require('../templates/page-header.hbs');
+
 const signInSuccess = () => {
   $('#sign-in-dropdown').hide();
   $('#sign-up-dropdown').hide();
   $('#exit').show();
-  $('#change-password-dropdown').show();
-  $('.sign-in-modal').modal('hide');
+  $('.main-body').empty();
+  $('.main-body').append(showHeader);
   $('input').val('');
 
 };
@@ -15,7 +17,8 @@ const signInFailure = () => {
 };
 
 const signUpSuccess = () => {
-  $('.sign-up-modal').modal('hide');
+  $('.main-body').empty();
+  $('.main-body').append(showHeader);
   $('input').val('');
 };
 
@@ -38,6 +41,7 @@ const signOutSuccess = () => {
   $('#sign-up-dropdown').show();
   $('.blog-render-signed-in').empty();
   $('.page-render').empty();
+  $('.hamburger').click();
 };
 
 module.exports = {

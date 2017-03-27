@@ -4,6 +4,8 @@ const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 const showNavbar = require('./templates/navbar.handlebars');
 const showSidebar = require('./templates/sidebar.handlebars');
+const showSignUp = require('./templates/sign-up.hbs');
+const showSignIn = require('./templates/sign-in.hbs');
 const handlers = require('./auth/events');
 
 $(() => {
@@ -11,23 +13,30 @@ $(() => {
   // $('.navbar-render').append(showSidebar);
   $('#change-password-dropdown').hide();
   $('#exit').hide();
+  $('.sign-up-dropdown').on('click', function () {
+    $('.main-body').empty();
+    $('.hamburger').click();
+    $('.main-body').append(showSignUp);
+  });
+  $('.sign-in-dropdown').on('click', function () {
+    $('.main-body').empty();
+    $('.hamburger').click();
+    $('.main-body').append(showSignIn);
+  });
 });
 
 
 $(document).ready(handlers.addHandlers);
 
 $(document).ready(function () {
-  var trigger = $('.hamburger'),
+  let trigger = $('.hamburger'),
       overlay = $('.overlay'),
      isClosed = false;
-
     trigger.click(function () {
       hamburger_cross();
     });
-
     function hamburger_cross() {
-
-      if (isClosed == true) {
+      if (isClosed === true) {
         overlay.hide();
         trigger.removeClass('is-open');
         trigger.addClass('is-closed');
@@ -39,7 +48,6 @@ $(document).ready(function () {
         isClosed = true;
       }
   }
-
   $('[data-toggle="offcanvas"]').click(function () {
         $('#wrapper').toggleClass('toggled');
   });
