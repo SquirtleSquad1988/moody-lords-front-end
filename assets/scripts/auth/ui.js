@@ -26,9 +26,9 @@ const signUpFailure = () => {
 };
 
 const changePasswordSuccess = () => {
-  $('.change-password-modal').modal('hide');
+  $('.main-body').empty();
+  $('.main-body').append(showHeader);
   $('input').val('');
-
 };
 
 const passwordChangeFailure = () => {

@@ -6,6 +6,7 @@ const showNavbar = require('./templates/navbar.handlebars');
 const showSidebar = require('./templates/sidebar.handlebars');
 const showSignUp = require('./templates/sign-up.hbs');
 const showSignIn = require('./templates/sign-in.hbs');
+const showChangePw = require('./templates/change-pw.hbs');
 const handlers = require('./auth/events');
 
 $(() => {
@@ -22,6 +23,11 @@ $(() => {
     $('.main-body').empty();
     $('.hamburger').click();
     $('.main-body').append(showSignIn);
+  });
+  $('.change-password-dropdown').on('click', function () {
+    $('.main-body').empty();
+    $('.hamburger').click();
+    $('.main-body').append(showChangePw);
   });
 });
 
