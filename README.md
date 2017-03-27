@@ -3,7 +3,6 @@
 
 -   [Wireframes](http://imgur.com/a/YJwub)
 -   [ERD](http://imgur.com/a/hBUcj)
--   [Handlebars.js](http://handlebarsjs.com)
 
 # User Stories
 
