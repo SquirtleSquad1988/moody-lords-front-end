@@ -1,2 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  background: #556270;
+  background: -webkit-linear-gradient(to left, #556270 , #FF6B6B);
+  background: linear-gradient(to left, #556270 , #FF6B6B);
+}
+
+h1 {
+  font-family: 'Rubik Mono One', sans-serif;
+  color: black;
+}
