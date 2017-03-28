@@ -21,8 +21,14 @@ const showBlogs = function (data) {
   //   let blogDescription = $(e.target).parent().parent();
   //   blogDescription.fadeOut();
   //   });
-  // $(".hide-blog-comments").hide();
-
+  $(".hide-blog-comments").hide();
+  $(".show-hide-comments").on("click", ".hide-blog-comments", function () {
+    console.log('hi');
+    let current = $(this).data('id');
+    $(".display-comments[data-id='" + current +"']").empty();
+    $(".hide-blog-comments[data-id='" + current +"']").hide();
+    $(".show-blog-comments[data-id='" + current +"']").show();
+  });
 };
 
 const onShowBlogComments = function (data) {

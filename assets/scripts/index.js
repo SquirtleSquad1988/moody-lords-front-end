@@ -19,6 +19,7 @@ $(() => {
   $('.main-body').append(showHeader);
   $('.change-password-dropdown').hide();
   $('#exit').hide();
+
   $('.sign-up-dropdown').on('click', function () {
     clearPage();
     $('.main-body').append(showSignUp);
