@@ -9,6 +9,7 @@
         <span class="label label-success show-blog-comments" data-id="{{blog.id}}">Show Comments</span>
         <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
         <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
+        <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
       </div>
     </div>
     <div class="fields" data-id="{{blog.id}}">
@@ -18,3 +19,5 @@
     </div>
   </div>
 {{/each}}
+
+value="{{blog.title}}"

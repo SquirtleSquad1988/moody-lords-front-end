@@ -64,7 +64,10 @@ span:hover {
 
 .label {
   float: right;
+}
 
+.hidden {
+  display: none;
 }
 
 h1 {

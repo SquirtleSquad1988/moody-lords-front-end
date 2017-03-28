@@ -53,6 +53,7 @@ const onUpdateBlog = function(event){
 
 const addHandlers = () => {
   $('.main-body').on('click', '.del-blog', onDeleteBlog);
+  $('.main-body').on('submit', '#blog-edit-form', onUpdateBlog);
   $('.navbar').on('click', '#blog-view', onShowBlog);
   $('.main-body').on('click', '.show-blog-comments', onShowBlogComments);
   $('.main-body').on('submit', '#blog-create-form', onCreateBlog)

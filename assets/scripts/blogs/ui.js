@@ -1,13 +1,16 @@
 'use strict';
 
 const showBlogsList = require('../templates/blog-templates/blog-listing.hbs');
+const renderEditBlogs = require('../templates/blog-templates/edit-blog.hbs');
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 const showHeader = require('../templates/page-header.hbs');
 
 const showBlogs = function (data) {
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
+  let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
   $('.main-body').empty();
   $('.main-body').append(showBlogsHtml);
+  $('.main-body').append(showBlogsEditHtml);
   $('.hamburger').click();
   $(".main-body").on("click", ".del-blog", function (e) {
     e.preventDefault();
