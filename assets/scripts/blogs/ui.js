@@ -27,6 +27,28 @@ const showBlogs = function (data) {
   });
 };
 
+const showBlogsAfterPost = function (data) {
+  let showBlogsHtml = showBlogsList({ blogs: data.blogs });
+  $('.main-body').empty();
+  $('.main-body').append(showBlogsHtml);
+  // the function below deletes the blog item from the rendered list and
+  // only that item. Have to alter DOM traversal if structure of blog-item
+  // is altered
+  // $("#content").on("click", ".del-blog", function (e) {
+  //   e.preventDefault();
+  //   let blogDescription = $(e.target).parent().parent();
+  //   blogDescription.fadeOut();
+  //   });
+  $(".hide-blog-comments").hide();
+  $(".show-hide-comments").on("click", ".hide-blog-comments", function () {
+    console.log('hi');
+    let current = $(this).data('id');
+    $(".display-comments[data-id='" + current +"']").empty();
+    $(".hide-blog-comments[data-id='" + current +"']").hide();
+    $(".show-blog-comments[data-id='" + current +"']").show();
+  });
+};
+
 const onShowBlogComments = function (data) {
   console.log(data);
   let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
@@ -87,4 +109,5 @@ module.exports = {
   onShowBlogComments,
   onDeleteSuccess,
   onCreateError,
+  showBlogsAfterPost
 };
