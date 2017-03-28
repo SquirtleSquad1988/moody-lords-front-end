@@ -12,7 +12,7 @@ const handlers = require('./auth/events');
 $(() => {
   setAPIOrigin(location, config);
   // $('.navbar-render').append(showSidebar);
-  $('#change-password-dropdown').hide();
+  $('.change-password-dropdown').hide();
   $('#exit').hide();
   $('.sign-up-dropdown').on('click', function () {
     $('.main-body').empty();
