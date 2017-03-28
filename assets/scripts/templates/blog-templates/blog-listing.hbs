@@ -8,9 +8,10 @@
       <div class="show-hide-comments">
         <span class="label label-success show-blog-comments" data-id="{{blog.id}}">Show Comments</span>
         <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
+        <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
       </div>
     </div>
-    <div class="fields" data-id="{{album.id}}">
+    <div class="fields" data-id="{{blog.id}}">
       <p><small>{{blog.body}}</small></p>
 
       <div class="display-comments" data-id="{{blog.id}}"></div>

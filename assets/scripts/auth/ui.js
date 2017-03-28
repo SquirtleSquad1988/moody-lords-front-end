@@ -35,6 +35,8 @@ const passwordChangeFailure = () => {
 };
 
 const signOutSuccess = () => {
+  $('.main-body').empty();
+  $('.main-body').append(showHeader);
   $('.change-password-dropdown').hide();
   $('#exit').hide();
   $('.sign-in-dropdown').show();
