@@ -12,6 +12,12 @@ const showBlogs = function (data) {
   $('.main-body').append(showBlogsHtml);
   $('.main-body').append(showBlogsEditHtml);
   $('.hamburger').click();
+  $(".main-body").on("click", ".edit-blog", function (e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $('.blog-item').addClass('hidden');
+    $("#blog-edit-form[data-id='" + current +"']").removeClass('hidden');
+    });
   $(".main-body").on("click", ".del-blog", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
@@ -29,8 +35,16 @@ const showBlogs = function (data) {
 
 const showBlogsAfterPost = function (data) {
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
+  let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
   $('.main-body').empty();
   $('.main-body').append(showBlogsHtml);
+  $('.main-body').append(showBlogsEditHtml);
+  $(".main-body").on("click", ".edit-blog", function (e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $('.blog-item').addClass('hidden');
+    $("#blog-edit-form[data-id='" + current +"']").removeClass('hidden');
+    });
   $(".main-body").on("click", ".del-blog", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
