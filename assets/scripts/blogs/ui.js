@@ -1,8 +1,7 @@
 'use strict';
 
-// const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 const showBlogsList = require('../templates/blog-listing.hbs');
-// const showCommentsTemplate = require('../templates/comment-listing.handlebars');
+const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showBlogs = function (data) {
   // selects the content element and appends new HTML into i
@@ -27,17 +26,16 @@ const showBlogs = function (data) {
 };
 
 const onShowBlogComments = function (data) {
-
+  console.log(data);
   let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
   let current = data.comments[0].blog_id;
   $(".display-comments[data-id='" + current +"']").empty();
   $(".display-comments[data-id='" + current +"']").append(showCommentsHtml);
   $(".show-blog-comments[data-id='" + current +"']").hide();
   $(".hide-blog-comments[data-id='" + current +"']").show();
-  $('.log').text('');
 };
 
-const showBlog = function (data) {
+const showBlog = function () {
 };
 
 const showSuccess = function () {
