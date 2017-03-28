@@ -2,6 +2,7 @@
 
 const showBlogsList = require('../templates/blog-templates/blog-listing.hbs');
 const renderEditBlogs = require('../templates/blog-templates/edit-blog.hbs');
+const blogRedirectPage = require('../templates/blog-templates/blog-redirect.hbs');
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 const showHeader = require('../templates/page-header.hbs');
 
@@ -82,12 +83,10 @@ const onShowError = function () {
 };
 
 const onPostSuccess = function () {
-  $(".show-all-blogs").click();
   $('.main-body').empty();
-  $('.main-body').append(showBlogsList);
-  $('input').val('');
   $('input').val('');
   $('textarea').val('');
+  $('.main-body').append(blogRedirectPage);
 };
 
 const onError = function () {
@@ -95,8 +94,10 @@ const onError = function () {
 };
 
 const onUpdateSuccess = function () {
-  $(".show-all-blogs").click();
-  $('.log').text('Blog Successfully Updated');
+  $('.main-body').empty();
+  $('input').val('');
+  $('textarea').val('');
+  $('.main-body').append(blogRedirectPage);
 };
 
 const onDeleteSuccess = function () {

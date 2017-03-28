@@ -52,13 +52,12 @@ const onUpdateBlog = function(event){
 };
 
 const addHandlers = () => {
+  $('.main-body').on('click', '#blogs-redirect', onShowBlogAfterPost);
   $('.main-body').on('click', '.del-blog', onDeleteBlog);
   $('.main-body').on('submit', '#blog-edit-form', onUpdateBlog);
-  $('.main-body').on('submit', '#blog-edit-form', onShowBlogAfterPost);
   $('.navbar').on('click', '#blog-view', onShowBlog);
   $('.main-body').on('click', '.show-blog-comments', onShowBlogComments);
-  $('.main-body').on('submit', '#blog-create-form', onCreateBlog)
-    .on('submit', '#blog-create-form', onShowBlogAfterPost);
+  $('.main-body').on('submit', '#blog-create-form', onCreateBlog);
 };
 
 module.exports = {
