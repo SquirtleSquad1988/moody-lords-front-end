@@ -47,8 +47,7 @@ const onUpdateBlog = function(event){
 const addHandlers = () => {
   $('.navbar').on('click', '#blog-view', onShowBlog);
   $('.main-body').on('click', '.show-blog-comments', onShowBlogComments);
-  // $('.main-body').on('submit', '#change-password', onChangePassword);
-  // $('.navbar').on('click', '#exit', onSignOut);
+  $('.main-body').on('submit', '#blog-create-form', onCreateBlog);
 };
 
 module.exports = {

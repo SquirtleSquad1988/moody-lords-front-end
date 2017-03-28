@@ -2,12 +2,13 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
-const showSignUp = require('./templates/sign-up.hbs');
-const showSignIn = require('./templates/sign-in.hbs');
-const showChangePw = require('./templates/change-pw.hbs');
+const showSignUp = require('./templates/auth-templates/sign-up.hbs');
+const showSignIn = require('./templates/auth-templates/sign-in.hbs');
+const showChangePw = require('./templates/auth-templates/change-pw.hbs');
 const handlers = require('./auth/events');
 const blogHandlers = require('./blogs/events');
 const showHeader = require('./templates/page-header.hbs');
+const showCreateBlog = require('./templates/blog-templates/create-blog.hbs');
 
 const clearPage = function () {
   $('.main-body').empty();
@@ -35,6 +36,10 @@ $(() => {
   $('.homepage-direct').on('click', function () {
     clearPage();
     $('.main-body').append(showHeader);
+  });
+  $('#create-blog').on('click', function () {
+    clearPage();
+    $('.main-body').append(showCreateBlog);
   });
 });
 

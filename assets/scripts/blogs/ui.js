@@ -1,15 +1,11 @@
 'use strict';
 
-const showBlogsList = require('../templates/blog-listing.hbs');
+const showBlogsList = require('../templates/blog-templates/blog-listing.hbs');
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
+const showHeader = require('../templates/page-header.hbs');
 
 const showBlogs = function (data) {
-  // selects the content element and appends new HTML into i
-  // showBooksHTML is a string of HTML that is made up
-  // of the template showBooksTemplate and the data.blogs objects
-  // let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
-  // selects the content element and appends new HTML into it
   $('.main-body').empty();
   $('.main-body').append(showBlogsHtml);
   $('.hamburger').click();
@@ -54,10 +50,11 @@ const onShowError = function () {
 
 const onPostSuccess = function () {
   $(".show-all-blogs").click();
-  $('.create-blog-modal').modal('hide');
-  $('.log').text('Successfully Created Blog');
-  $('.credential-status').empty();
+  $('.main-body').empty();
+  $('.main-body').append(showBlogsList);
   $('input').val('');
+  $('input').val('');
+  $('textarea').val('');
 };
 
 const onError = function () {
@@ -74,7 +71,7 @@ const onDeleteSuccess = function () {
 };
 
 const onCreateError = function() {
- $('.credential-status').text('Please Try Again: Parameters must contain at least 1 character');
+
 };
 
 
