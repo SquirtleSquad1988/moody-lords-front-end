@@ -1,62 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-body {
-  background: #556270;
-  background: -webkit-linear-gradient(to left, #556270 , #FF6B6B);
-  background: linear-gradient(to left, #556270 , #FF6B6B);
-}
-
-.blog-item {
-  border: 1px black;
-  display: block;
-  left: 0px;
-  margin: 0 auto;
-  height: 300px;
-  width: 275px;
-  border-style: solid;
-  padding: 0px;
-  float: left;
-  background-color: #ffce83;
-  color: black;
-}
-
-.blog-info {
-  height: 13%;
-  width: 100%;
-  border-top: 0px black;
-  border-left: 0px black;
-  border-right: 0px black;
-  border-bottom: 1px black;
-  border-style: solid;
-  background-color: #ffa85f;
-  overflow: scroll;
-  padding: 0px;
-  margin: 0px;
-  color: #2A4E73;
-  font-family: 'Exo', sans-serif;
-  font-style: thin;
-}
-
-.fields {
-  margin: 0 auto;
-  height: 80%;
-  width: 100%;
-  background-color: #ffce83;
-  border: 1px #000000;
-  border-style: none;
-  overflow: scroll;
-}
-
-span:hover {
-  cursor: pointer;
-}
-
-h1 {
-  font-family: 'Rubik Mono One', sans-serif;
-  color: black;
-}
-
 /*-------------------------------*/
 /*          Sidebar Styling      */
 /*-------------------------------*/
@@ -68,7 +12,6 @@ body {
 body,
 html {
   height: 100%;
-  background-color: #583e7e;
 }
 .nav .open > a {
   background-color: transparent;
@@ -340,21 +283,7 @@ html {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
-/* SOME DEMO STYLES - NOT REQUIRED */
-body,
-html {
-  background-color: #583e7e;
-}
-body h1,
-body h2,
-body h3,
-body h4 {
-  color: rgba(255, 255, 255, 0.9);
-}
-body a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: underline;
-}
+
 body a:hover {
   color: #fff;
 }
@@ -370,11 +299,10 @@ body a:hover {
   left: 0px;
   margin: 0 auto;
   height: 300px;
-  width: 275px;
+  width: 100%;
   border-style: solid;
   padding: 0px;
   float: left;
-  background-color: #ffce83;
   color: black;
 }
 
@@ -386,27 +314,38 @@ body a:hover {
   border-right: 0px black;
   border-bottom: 1px black;
   border-style: solid;
-  background-color: #ffa85f;
   overflow: scroll;
   padding: 0px;
   margin: 0px;
-  color: #2A4E73;
-  font-family: 'Exo', sans-serif;
   font-style: thin;
 }
+
+// .show-hide-comments {
+//   width: 40%;
+//   height: 13%;
+// }
 
 .fields {
   margin: 0 auto;
   height: 80%;
   width: 100%;
-  background-color: #ffce83;
   border: 1px #000000;
   border-style: none;
   overflow: scroll;
 }
 
+.deets {
+  width: 60%;
+  float: left;
+}
+
 span:hover {
   cursor: pointer;
+}
+
+.label {
+  float: right;
+
 }
 
 h1 {
