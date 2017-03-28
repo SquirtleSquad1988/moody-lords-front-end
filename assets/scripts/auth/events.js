@@ -58,6 +58,30 @@ const addHandlers = () => {
   $('.main-body').on('submit', '#sign-in', onSignIn);
   $('.main-body').on('submit', '#change-password', onChangePassword);
   $('.navbar').on('click', '#exit', onSignOut);
+  $(document).ready(function () {
+    let trigger = $('.hamburger'),
+        overlay = $('.overlay'),
+       isClosed = false;
+      trigger.click(function () {
+        hamburger_cross();
+      });
+      function hamburger_cross() {
+        if (isClosed === true) {
+          overlay.hide();
+          trigger.removeClass('is-open');
+          trigger.addClass('is-closed');
+          isClosed = false;
+        } else {
+          overlay.show();
+          trigger.removeClass('is-closed');
+          trigger.addClass('is-open');
+          isClosed = true;
+        }
+    }
+    $('[data-toggle="offcanvas"]').click(function () {
+          $('#wrapper').toggleClass('toggled');
+    });
+  });
 };
 
 module.exports = {
