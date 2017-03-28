@@ -1,16 +1,14 @@
 <form class="form-check" id="change-password">
   <legend>Change Password</legend>
-  <div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">Old Password</label>
-    <div class="col-10">
+  <fieldset>
+    <div class="form-group">
+      <label>Old Password:</label>
       <input class="form-control" type="password" name="passwords[old]">
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">New Password</label>
-    <div class="col-10">
+    <div class="form-group">
+      <label>New Password:</label>
       <input class="form-control" type="password" name="passwords[new]">
     </div>
-  </div>
-  <button type="submit" class="btn btn-success">Change Password</button>
+    <button type="submit" class="btn btn-success">Change Password</button>
+  </fieldset>
 </form>

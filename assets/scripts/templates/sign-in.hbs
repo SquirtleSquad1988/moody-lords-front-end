@@ -1,16 +1,14 @@
 <form class="form-check form-sign-in-dropdown" id="sign-in">
-  <legend>Sign in!</legend>
-  <div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">E-mail</label>
-    <div class="col-10">
+  <legend>Sign in</legend>
+  <fieldset>
+    <div class="form-group">
+      <label>Email:</label>
       <input class="form-control" type="text" name="credentials[email]">
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">Password</label>
-    <div class="col-10">
+    <div class="form-group">
+      <label>New Password:</label>
       <input class="form-control" type="password" name="credentials[password]">
     </div>
-  </div>
-  <button type="submit" class="btn btn-success">Sign In!</button>
+    <button type="submit" class="btn btn-success">Sign In!</button>
+  </fieldset>
 </form>

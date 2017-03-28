@@ -10,7 +10,6 @@ const signInSuccess = () => {
   $('.main-body').empty();
   $('.main-body').append(showHeader);
   $('input').val('');
-
 };
 
 const signInFailure = () => {
