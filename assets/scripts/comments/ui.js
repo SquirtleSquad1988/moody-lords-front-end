@@ -24,7 +24,7 @@ const onPostSuccess2 = function (data) {
   $(".hide-blog-comments[data-id='" + current +"']").hide();
   $(".show-blog-comments[data-id='" + current +"']").show();
   $(".edit-blog-form[data-id='" + current +"']").hide();
-  $('input').val('');
+  $('#comment-input').val('');
 
 };
 
