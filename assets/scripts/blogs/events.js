@@ -73,14 +73,15 @@ const addHandlers = () => {
   });
   // Create Comment Button
   $(".main-body").on("click", ".create-comment", function (e) {
-    console.log('hi');
+    console.log('Create Comment');
     e.preventDefault();
     let current = $(this).data('id');
-    $(".edit-blog-form[data-id='" + current +"']").slideToggle();
+    $(".edit-blog-form[data-id='" + current +"']").fadeToggle();
   });
   // Show/Hide Button
-  $(".show-hide-comments").on("click", ".hide-blog-comments", function () {
+  $(".main-body").on("click", ".hide-blog-comments", function (e) {
     console.log('hi');
+    e.preventDefault();
     let current = $(this).data('id');
     $(".display-comments[data-id='" + current +"']").empty();
     $(".hide-blog-comments[data-id='" + current +"']").hide();

@@ -23,7 +23,7 @@ const onPostSuccess2 = function (data) {
   $(".display-comments[data-id='" + current +"']").append();
   $(".hide-blog-comments[data-id='" + current +"']").hide();
   $(".show-blog-comments[data-id='" + current +"']").show();
-  $(".edit-blog-form[data-id='" + current +"']").hide();
+  $(".edit-blog-form[data-id='" + current +"']").fadeOut();
   $('#comment-input').val('');
 
 };
