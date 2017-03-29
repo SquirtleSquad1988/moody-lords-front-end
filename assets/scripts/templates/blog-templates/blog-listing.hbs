@@ -1,59 +1,33 @@
 {{#each blogs as |blog|}}
-  {{!-- <div class="blog-item" data-id="{{blog.id}}">
-    <h2>{{blog.title}}</h2>
-    <div id="exTab3">
-      <ul  class="nav nav-pills">
-        <li class="active blog-pill" data-id="{{blog.id}}">
-          <a  href="#{{blog.id}}" class="active blog-pill" data-toggle="tab">Blog Content</a>
-        </li>
-        <li class="comments-tab" data-id="{{blog.id}}"><a href="#comments-tab-reference" data-toggle="tab">Comments</a>
-        </li>
-      </ul>
+  <div>
+      <div class="blog-item" data-id="{{blog.id}}">
+        <div class="blog-info" data-id="{{blog.id}}">
+          <ul class="deets" data-id="{{blog.id}}">
+            <h4>{{blog.title}}<h4>
+          </ul>
+          <div class="show-hide-comments">
+            <span class="label label-success show-blog-comments" data-id="{{blog.id}}">Show Comments</span>
+            <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
+            <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
+            <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
+              <span class="label label-default create-comment" data-id="{{blog.id}}">Comment</span>
+          </div>
+        </div>
+        <div class="fields" data-id="{{blog.id}}">
+          <p><small>{{blog.body}}</small></p>
 
-      <div class="tab-content clearfix">
-  			  <div class="tab-pane active" id="{{blog.id}}">
-            <div class='blog-body-div'>
-              <h3>{{blog.body}}</h3>
-            </div>
-  				</div>
-  				<div class="tab-pane" id="comments-tab-reference" data-id="{{blog.id}}">
-  				</div>
-          <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
-          <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
-          <span class="label label-default create-comment" data-id="{{blog.id}}">Comment</span>
-  		</div>
-    </div>
-    <form class="form-check edit-blog-form" data-id="{{blog.id}}">
-      <input data-id="{{blog.id}}" class="form-control" type="text" value name="comment[comment]">
-      <input type="hidden" name="comment[blog_id]" value="{{blog.id}}">
-      <button type="submit" class="btn btn-success" data-id="{{blog.id}}">Comment</button>
-    </form>
-  </div> --}}
-<div>
-    <div class="blog-item" data-id="{{blog.id}}">
-      <div class="blog-info" data-id="{{blog.id}}">
-        <ul class="deets" data-id="{{blog.id}}">
-          <h4>{{blog.title}}<h4>
-        </ul>
-        <div class="show-hide-comments">
-          <span class="label label-success show-blog-comments" data-id="{{blog.id}}">Show Comments</span>
-          <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
-          <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
-          <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
-            <span class="label label-default create-comment" data-id="{{blog.id}}">Comment</span>
+          <div class="display-comments" data-id="{{blog.id}}"></div>
         </div>
       </div>
-      <div class="fields" data-id="{{blog.id}}">
-        <p><small>{{blog.body}}</small></p>
-
-        <div class="display-comments" data-id="{{blog.id}}"></div>
-      </div>
-    </div>
+      {{!-- <form class="form-check edit-blog-form" data-id="{{blog.id}}">
+        <input data-id="{{blog.id}}" class="form-control" type="text" value name="comment[comment]">
+        <input type="hidden" name="comment[blog_id]" value="{{blog.id}}">
+        <button type="submit" class="btn btn-success" data-id="{{blog.id}}">Comment</button>
+      </form> --}}
+    <div>
     <form class="form-check edit-blog-form" data-id="{{blog.id}}">
       <input data-id="{{blog.id}}" class="form-control" type="text" value name="comment[comment]">
       <input type="hidden" name="comment[blog_id]" value="{{blog.id}}">
       <button type="submit" class="btn btn-success" data-id="{{blog.id}}">Comment</button>
     </form>
-  <div>
-
 {{/each}}

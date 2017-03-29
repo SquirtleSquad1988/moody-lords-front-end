@@ -12,7 +12,9 @@ const onCreateComment = function (event) {
   .then((response) => {
     store.blog = response.blog;
     ui.onPostSuccess(response.blog);
-  }).catch(ui.onCreateError);
+  })
+  .then(ui.onPostSuccess2(data))
+  .catch(ui.onCreateError);
 };
 
 const onShowComment = function (event) {

@@ -15,6 +15,16 @@ const onPatchSuccess = function () {
 
 const onPostSuccess = function () {
 
+};
+
+const onPostSuccess2 = function (data) {
+  let current = data.comment.blog_id;
+  $(".display-comments[data-id='" + current +"']").empty();
+  $(".display-comments[data-id='" + current +"']").append();
+  $(".hide-blog-comments[data-id='" + current +"']").hide();
+  $(".show-blog-comments[data-id='" + current +"']").show();
+  $(".edit-blog-form[data-id='" + current +"']").hide();
+  $('input').val('');
 
 };
 
@@ -34,5 +44,6 @@ module.exports = {
   onPatchSuccess,
   onPostSuccess,
   onCreateError,
-  onUpdateSuccess
+  onUpdateSuccess,
+  onPostSuccess2
 };

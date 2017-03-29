@@ -13,32 +13,36 @@ const showBlogs = function (data) {
   $('.main-body').append(showBlogsHtml);
   $('.main-body').append(showBlogsEditHtml);
   $('.hamburger').click();
+  // Edit Blog Button
   $(".main-body").on("click", ".edit-blog", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
     $('.blog-item').addClass('hidden');
     $("#blog-edit-form[data-id='" + current +"']").removeClass('hidden');
     });
+  // Delete blog button
   $(".main-body").on("click", ".del-blog", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
     $(".blog-item[data-id='" + current +"']").fadeOut();
-    });
-    $(".main-body").on("click", ".create-comment", function (e) {
-      console.log('hi');
-      e.preventDefault();
-      let current = $(this).data('id');
-      $(".edit-blog-form[data-id='" + current +"']").slideToggle();
-    });
-    $(".hide-blog-comments").hide();
-    $(".show-hide-comments").on("click", ".hide-blog-comments", function () {
-      console.log('hi');
-      let current = $(this).data('id');
-      $(".display-comments[data-id='" + current +"']").empty();
-      $(".hide-blog-comments[data-id='" + current +"']").hide();
-      $(".show-blog-comments[data-id='" + current +"']").show();
-    });
-    $('.edit-blog-form').hide();
+  });
+    // Create Comment Button
+  $(".main-body").on("click", ".create-comment", function (e) {
+    console.log('hi');
+    e.preventDefault();
+    let current = $(this).data('id');
+    $(".edit-blog-form[data-id='" + current +"']").slideToggle();
+  });
+  $(".hide-blog-comments").hide();
+  // Show/Hide Button
+  $(".show-hide-comments").on("click", ".hide-blog-comments", function () {
+    console.log('hi');
+    let current = $(this).data('id');
+    $(".display-comments[data-id='" + current +"']").empty();
+    $(".hide-blog-comments[data-id='" + current +"']").hide();
+    $(".show-blog-comments[data-id='" + current +"']").show();
+  });
+  $('.edit-blog-form').hide();
 };
 
 const showBlogsAfterPost = function (data) {
@@ -47,23 +51,27 @@ const showBlogsAfterPost = function (data) {
   $('.main-body').empty();
   $('.main-body').append(showBlogsHtml);
   $('.main-body').append(showBlogsEditHtml);
+  // Edit Blog Button
   $(".main-body").on("click", ".edit-blog", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
     $('.blog-item').addClass('hidden');
     $("#blog-edit-form[data-id='" + current +"']").removeClass('hidden');
   });
+  // Delete Blog Button
   $(".main-body").on("click", ".del-blog", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
     $(".blog-item[data-id='" + current +"']").fadeOut();
   });
+  // Create Comment Button
   $(".main-body").on("click", ".create-comment", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
     $(".edit-blog-form[data-id='" + current +"']").slideToggle();
   });
   $(".hide-blog-comments").hide();
+  // Show/Hide Button
   $(".show-hide-comments").on("click", ".hide-blog-comments", function () {
     console.log('hi');
     let current = $(this).data('id');
