@@ -14,8 +14,7 @@ const onPatchSuccess = function () {
 };
 
 const onPostSuccess = function () {
-  $(".show-all-blogs").click();
-  $('.log').text('Comment Successfully Created');
+
 
 };
 

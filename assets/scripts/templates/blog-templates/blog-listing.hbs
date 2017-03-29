@@ -15,13 +15,19 @@
             <div class='blog-body-div'>
               <h3>{{blog.body}}</h3>
             </div>
-            <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
-            <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
   				</div>
   				<div class="tab-pane" id="comments-tab-reference" data-id="{{blog.id}}">
   				</div>
+          <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
+          <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
+          <span class="label label-default create-comment" data-id="{{blog.id}}">Comment</span>
   		</div>
     </div>
+    <form class="form-check edit-blog-form" data-id="{{blog.id}}">
+      <input data-id="{{blog.id}}" class="form-control" type="text" value name="comment[comment]">
+      <input type="hidden" name="comment[blog_id]" value="{{blog.id}}">
+      <button type="submit" class="btn btn-success" data-id="{{blog.id}}">Comment</button>
+    </form>
   </div>
 
 {{/each}}

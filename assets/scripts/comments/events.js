@@ -42,9 +42,16 @@ const onUpdateComment = function(event){
 
 };
 
+const addHandlers = () => {
+  $('.main-body').on('submit', '.edit-blog-form', onCreateComment);
+};
+
+
+
 module.exports = {
   onUpdateComment,
   onCreateComment,
   onShowComment,
   onDeleteComment,
+  addHandlers
 };

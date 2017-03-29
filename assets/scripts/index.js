@@ -7,6 +7,7 @@ const showSignIn = require('./templates/auth-templates/sign-in.hbs');
 const showChangePw = require('./templates/auth-templates/change-pw.hbs');
 const handlers = require('./auth/events');
 const blogHandlers = require('./blogs/events');
+const commentHandlers = require('./comments/events');
 const showHeader = require('./templates/page-header.hbs');
 const showCreateBlog = require('./templates/blog-templates/create-blog.hbs');
 
@@ -45,3 +46,4 @@ $(() => {
 
 $(document).ready(handlers.addHandlers);
 $(document).ready(blogHandlers.addHandlers);
+$(document).ready(commentHandlers.addHandlers);
