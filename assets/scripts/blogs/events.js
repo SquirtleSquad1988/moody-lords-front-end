@@ -57,10 +57,7 @@ const addHandlers = () => {
   $('.main-body').on('submit', '#blog-edit-form', onUpdateBlog);
   $('.navbar').on('click', '#blog-view', onShowBlog);
   $('.main-body').on('submit', '#blog-create-form', onCreateBlog);
-  $('.main-body').on('click', '.comments-tab', onShowBlogComments);
-  $('.main-body').on('click', '.blog-pill', function () {
-    $(".comments-tab[data-id='" + $(this).data('id') +"']").show();
-  });
+  $('.main-body').on('click', '.show-blog-comments', onShowBlogComments);
 };
 
 module.exports = {

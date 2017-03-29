@@ -13,6 +13,51 @@ body {
   background: linear-gradient(to left, #556270 , #FF6B6B);
 }
 
+.blog-item {
+  border: 1px black;
+  display: block;
+  left: 0px;
+  margin: 0 auto;
+  height: 300px;
+  width: 100%;
+  border-style: solid;
+  padding: 0px;
+  float: left;
+  color: black;
+}
+
+.blog-info {
+  height: 13%;
+  width: 100%;
+  border-top: 0px black;
+  border-left: 0px black;
+  border-right: 0px black;
+  border-bottom: 1px black;
+  border-style: solid;
+  padding: 0px;
+  margin: 0px;
+  font-style: thin;
+}
+
+// .show-hide-comments {
+//   width: 40%;
+//   height: 13%;
+// }
+
+.fields {
+  margin: 0 auto;
+  height: 80%;
+  width: 100%;
+  border: 1px #000000;
+  border-style: none;
+  overflow: scroll;
+}
+
+.deets {
+  width: 60%;
+  float: left;
+}
+
 span:hover {
   cursor: pointer;
 }
@@ -28,13 +73,4 @@ span:hover {
 h1 {
   font-family: 'Rubik Mono One', sans-serif;
   color: black;
-}
-
-#exTab3 .nav-pills > li > a {
-  border-radius: 4px 4px 0 0 ;
-}
-
-#exTab3 .tab-content {
-  padding : 5px 15px;
-  width: 100%;
 }
