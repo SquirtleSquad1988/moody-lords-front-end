@@ -58,6 +58,34 @@ const addHandlers = () => {
   $('.navbar').on('click', '#blog-view', onShowBlog);
   $('.main-body').on('submit', '#blog-create-form', onCreateBlog);
   $('.main-body').on('click', '.show-blog-comments', onShowBlogComments);
+  // Edit Blog Button
+  $(".main-body").on("click", ".edit-blog", function (e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $('.blog-item').addClass('hidden');
+    $("#blog-edit-form[data-id='" + current +"']").removeClass('hidden');
+    });
+  // Delete blog button
+  $(".main-body").on("click", ".del-blog", function (e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $(".blog-item[data-id='" + current +"']").fadeOut();
+  });
+  // Create Comment Button
+  $(".main-body").on("click", ".create-comment", function (e) {
+    console.log('hi');
+    e.preventDefault();
+    let current = $(this).data('id');
+    $(".edit-blog-form[data-id='" + current +"']").slideToggle();
+  });
+  // Show/Hide Button
+  $(".show-hide-comments").on("click", ".hide-blog-comments", function () {
+    console.log('hi');
+    let current = $(this).data('id');
+    $(".display-comments[data-id='" + current +"']").empty();
+    $(".hide-blog-comments[data-id='" + current +"']").hide();
+    $(".show-blog-comments[data-id='" + current +"']").show();
+  });
 };
 
 module.exports = {
