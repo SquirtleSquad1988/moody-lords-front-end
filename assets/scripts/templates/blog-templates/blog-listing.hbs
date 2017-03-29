@@ -1,21 +1,47 @@
 {{#each blogs as |blog|}}
-
   <div class="blog-item" data-id="{{blog.id}}">
-    <div class="blog-info" data-id="{{blog.id}}">
-      <ul class="deets" data-id="{{blog.id}}">
-        <h4>{{blog.title}}<h4>
+    <h2>{{blog.title}}</h2>
+    <div id="exTab3">
+      <ul  class="nav nav-pills">
+        <li class="active">
+          <a  href="{{blog.id}}" data-toggle="tab">Blog Content</a>
+        </li>
+        <li><a href="#2b" data-toggle="tab">Comments</a>
+        </li>
       </ul>
-      <div class="show-hide-comments">
-        <span class="label label-success show-blog-comments" data-id="{{blog.id}}">Show Comments</span>
-        <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
-        <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
-        <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
-      </div>
-    </div>
-    <div class="fields" data-id="{{blog.id}}">
-      <p><small>{{blog.body}}</small></p>
 
-      <div class="display-comments" data-id="{{blog.id}}"></div>
+      <div class="tab-content clearfix">
+  			  <div class="tab-pane active" id="{{blog.id}}">
+            <div class='blog-body-div'>
+              <h3>{{blog.body}}</h3>
+            </div>
+            <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
+            <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
+  				</div>
+  				<div class="tab-pane" id="comments-tab">
+            <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+  				</div>
+  		</div>
     </div>
+
+    {{!-- <div class="blog-item" data-id="{{blog.id}}">
+      <div class="blog-info" data-id="{{blog.id}}">
+        <ul class="deets" data-id="{{blog.id}}">
+          <h4>{{blog.title}}<h4>
+        </ul>
+        <div class="show-hide-comments">
+          <span class="label label-success show-blog-comments" data-id="{{blog.id}}">Show Comments</span>
+          <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
+          <span class="label label-danger del-blog" data-id="{{blog.id}}">Delete</span>
+          <span class="label label-default edit-blog" data-id="{{blog.id}}">Edit</span>
+        </div>
+      </div>
+      <div class="fields" data-id="{{blog.id}}">
+        <p><small>{{blog.body}}</small></p>
+
+        <div class="display-comments" data-id="{{blog.id}}"></div>
+      </div>
+    </div> --}}
   </div>
+
 {{/each}}
