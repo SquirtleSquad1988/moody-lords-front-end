@@ -4,6 +4,7 @@ const showBlogsList = require('../templates/blog-templates/blog-listing.hbs');
 const renderEditBlogs = require('../templates/blog-templates/edit-blog.hbs');
 const blogRedirectPage = require('../templates/blog-templates/blog-redirect.hbs');
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
+const store = require('../store');
 const showHeader = require('../templates/page-header.hbs');
 
 const showBlogs = function (data) {
@@ -15,6 +16,9 @@ const showBlogs = function (data) {
   $('.hamburger').click();
   $(".hide-blog-comments").hide();
   $('.edit-blog-form').hide();
+  if (!store.user.admin) {
+    $('.admin').hide();
+  }
 };
 
 const showBlogsAfterPost = function (data) {
@@ -25,6 +29,9 @@ const showBlogsAfterPost = function (data) {
   $('.main-body').append(showBlogsEditHtml);
   $(".hide-blog-comments").hide();
   $('.edit-blog-form').hide();
+  if (!store.user.admin) {
+    $('.admin').hide();
+  }
 };
 
 const onShowBlogComments = function (data) {
@@ -35,6 +42,9 @@ const onShowBlogComments = function (data) {
   $(".display-comments[data-id='" + current +"']").append(showCommentsHtml);
   $(".show-blog-comments[data-id='" + current +"']").hide();
   $(".hide-blog-comments[data-id='" + current +"']").show();
+  if (!store.user.admin) {
+    $('.admin').hide();
+  }
 };
 
 const showBlog = function () {
@@ -67,7 +77,6 @@ const onUpdateSuccess = function () {
 };
 
 const onDeleteSuccess = function () {
-  $('.log').text('Blog Successfully Deleted');
 };
 
 const onCreateError = function() {

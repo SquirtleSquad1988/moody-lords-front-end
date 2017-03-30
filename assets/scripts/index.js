@@ -29,9 +29,13 @@ $(() => {
   if (store.user) {
     $('.sign-up-dropdown').hide();
     $('.sign-in-dropdown').hide();
+    if (!store.user.admin) {
+      $('.admin').hide();
+    }
   } else {
     $('.change-password-dropdown').hide();
     $('#exit').hide();
+    $('.admin').hide();
   }
   $('.sign-up-dropdown').on('click', function () {
     clearPage();

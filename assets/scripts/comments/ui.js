@@ -17,6 +17,10 @@ const onPostSuccess = function () {
 
 };
 
+const onDeleteSuccess = function () {
+
+};
+
 const onPostSuccess2 = function (data) {
   let current = data.comment.blog_id;
   $(".display-comments[data-id='" + current +"']").empty();
@@ -45,5 +49,6 @@ module.exports = {
   onPostSuccess,
   onCreateError,
   onUpdateSuccess,
-  onPostSuccess2
+  onPostSuccess2,
+  onDeleteSuccess
 };
