@@ -1,5 +1,6 @@
 'use strict';
 
+const store = require('../store');
 const showHeader = require('../templates/page-header.hbs');
 
 const signInSuccess = () => {
@@ -42,6 +43,8 @@ const signOutSuccess = () => {
   $('.sign-in-dropdown').show();
   $('.sign-up-dropdown').show();
   $('.hamburger').click();
+  localStorage.removeItem('user');
+  store.user = null;
 };
 
 module.exports = {

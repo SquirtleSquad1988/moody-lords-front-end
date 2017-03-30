@@ -26,9 +26,13 @@ $(() => {
   store.user = JSON.parse(localStorage.getItem('user'));
   setAPIOrigin(location, config);
   $('.main-body').append(showHeader);
-  $('.change-password-dropdown').hide();
-  $('#exit').hide();
-
+  if (store.user) {
+    $('.sign-up-dropdown').hide();
+    $('.sign-in-dropdown').hide();
+  } else {
+    $('.change-password-dropdown').hide();
+    $('#exit').hide();
+  }
   $('.sign-up-dropdown').on('click', function () {
     clearPage();
     $('.main-body').append(showSignUp);
