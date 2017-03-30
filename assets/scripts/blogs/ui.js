@@ -43,6 +43,7 @@ const onShowBlogComments = function (data) {
   let current = data.comments[0].blog_id;
   $(".display-comments[data-id='" + current +"']").empty();
   $(".display-comments[data-id='" + current +"']").append(showCommentsHtml);
+  $(".show-blog-comments-log-out[data-id='" + current +"']").hide();
   $(".show-blog-comments[data-id='" + current +"']").hide();
   $(".hide-blog-comments[data-id='" + current +"']").show();
 };

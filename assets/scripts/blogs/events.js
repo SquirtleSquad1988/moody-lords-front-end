@@ -101,6 +101,7 @@ const addHandlers = () => {
     let current = $(this).data('id');
     $(".display-comments[data-id='" + current +"']").empty();
     $(".hide-blog-comments[data-id='" + current +"']").hide();
+    $(".show-blog-comments-log-out[data-id='" + current +"']").show();
     $(".show-blog-comments[data-id='" + current +"']").show();
   });
 };
