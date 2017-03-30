@@ -38,6 +38,13 @@ const onShowBlogAfterPost = function (event) {
 
 const onShowBlogComments = function (event) {
   event.preventDefault();
+    api.showBlogComments(+$(this).data('id'))
+    .then(ui.onShowBlogComments)
+    .catch(ui.onShowError);
+};
+
+const onShowBlogCommentsLogOut = function (event) {
+  event.preventDefault();
     api.showBlogCommentsLogOut(+$(this).data('id'))
     .then(ui.onShowBlogComments)
     .catch(ui.onShowError);
@@ -65,6 +72,7 @@ const addHandlers = () => {
   $('.navbar').on('click', '#blog-view', onShowBlog);
   $('.navbar').on('click', '#blog-view-log-out', onShowBlogsLogOut);
   $('.main-body').on('submit', '#blog-create-form', onCreateBlog);
+  $('.main-body').on('click', '.show-blog-comments-log-out', onShowBlogCommentsLogOut);
   $('.main-body').on('click', '.show-blog-comments', onShowBlogComments);
   // Edit Blog Button
   $(".main-body").on("click", ".edit-blog", function (e) {

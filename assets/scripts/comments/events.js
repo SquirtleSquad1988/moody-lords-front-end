@@ -47,7 +47,11 @@ const onUpdateComment = function(event){
 const addHandlers = () => {
   $('.main-body').on('submit', '.edit-blog-form', onCreateComment);
   $('.main-body').on('click', '.del-comment', onDeleteComment);
-  del-comment
+  $(".main-body").on("click", ".del-comment", function (e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $("#blog-comment[data-id='" + current +"']").fadeOut();
+  });
 };
 
 
