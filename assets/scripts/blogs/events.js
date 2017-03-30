@@ -25,7 +25,7 @@ const onShowBlog = function (event) {
 const onShowBlogsLogOut = function (event) {
   event.preventDefault();
     api.showBlogsLogOut()
-    .then(ui.showBlogs)
+    .then(ui.showBlogsLogOut)
     .catch(ui.onShowError);
 };
 

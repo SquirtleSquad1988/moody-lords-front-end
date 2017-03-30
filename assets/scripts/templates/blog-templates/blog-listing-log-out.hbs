@@ -1,0 +1,19 @@
+{{#each blogs as |blog|}}
+  <div>
+      <div class="blog-item" data-id="{{blog.id}}">
+        <div class="blog-info" data-id="{{blog.id}}">
+          <ul class="deets" data-id="{{blog.id}}">
+            <h4>{{blog.title}}<h4>
+          </ul>
+          <div class="show-hide-comments">
+            <span class="label label-success show-blog-comments" data-id="{{blog.id}}">Show Comments</span>
+            <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
+          </div>
+        </div>
+        <div class="fields" data-id="{{blog.id}}">
+          <p><small>{{blog.body}}</small></p>
+          <div class="display-comments" data-id="{{blog.id}}"></div>
+        </div>
+      </div>
+    </div>
+{{/each}}

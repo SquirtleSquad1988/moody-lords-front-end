@@ -11,6 +11,9 @@ const signInSuccess = () => {
   $('.main-body').empty();
   $('.main-body').append(showHeader);
   $('input').val('');
+  $('#blog-view').show();
+  $('#blog-view-log-out').hide();
+  $('#create-blog').show();
 };
 
 const signInFailure = () => {
@@ -43,6 +46,9 @@ const signOutSuccess = () => {
   $('.sign-in-dropdown').show();
   $('.sign-up-dropdown').show();
   $('.hamburger').click();
+  $('#blog-view').hide();
+  $('#blog-view-log-out').show();
+  $('#create-blog').hide();
   localStorage.removeItem('user');
   store.user = null;
 };

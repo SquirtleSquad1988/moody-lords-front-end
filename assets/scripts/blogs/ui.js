@@ -1,10 +1,10 @@
 'use strict';
 
 const showBlogsList = require('../templates/blog-templates/blog-listing.hbs');
+const showBlogsListLogOut = require('../templates/blog-templates/blog-listing-log-out.hbs');
 const renderEditBlogs = require('../templates/blog-templates/edit-blog.hbs');
 const blogRedirectPage = require('../templates/blog-templates/blog-redirect.hbs');
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
-const showHeader = require('../templates/page-header.hbs');
 
 const showBlogs = function (data) {
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
@@ -12,6 +12,16 @@ const showBlogs = function (data) {
   $('.main-body').empty();
   $('.main-body').append(showBlogsHtml);
   $('.main-body').append(showBlogsEditHtml);
+  $('.hamburger').click();
+  $(".hide-blog-comments").hide();
+  $('.edit-blog-form').hide();
+};
+
+const showBlogsLogOut = function (data) {
+  console.log('showBlogsLogOut Function');
+  let showBlogsHtml = showBlogsListLogOut({ blogs: data.blogs });
+  $('.main-body').empty();
+  $('.main-body').append(showBlogsHtml);
   $('.hamburger').click();
   $(".hide-blog-comments").hide();
   $('.edit-blog-form').hide();
@@ -87,5 +97,6 @@ module.exports = {
   onShowBlogComments,
   onDeleteSuccess,
   onCreateError,
-  showBlogsAfterPost
+  showBlogsAfterPost,
+  showBlogsLogOut
 };

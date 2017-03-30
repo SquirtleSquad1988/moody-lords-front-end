@@ -23,13 +23,18 @@ const clearPage = function () {
 
 $(() => {
   // sets the store.user parameter to the key 'user' in local storage
+
   store.user = JSON.parse(localStorage.getItem('user'));
   setAPIOrigin(location, config);
+
   $('.main-body').append(showHeader);
   if (store.user) {
+    $('#blog-view-log-out').hide();
     $('.sign-up-dropdown').hide();
     $('.sign-in-dropdown').hide();
   } else {
+    $('#blog-view').hide();
+    $('#create-blog').hide();
     $('.change-password-dropdown').hide();
     $('#exit').hide();
   }
