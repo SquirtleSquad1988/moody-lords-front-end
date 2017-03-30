@@ -11,6 +11,9 @@ const onSignIn = function (event) {
   let data = getFormFields(event.target);
   api.signIn(data)
     .then((response) => {
+      // sets the local storage key "user" to the object response.user
+      // which contains the user token
+      localStorage.setItem("user", JSON.stringify(response.user));
       store.user = response.user;
       return store.user;
     })
@@ -27,8 +30,12 @@ const onSignUp = function (event) {
     .then(()=> {
       onSignIn(event, data);
     })
-  . then(ui.signUpSuccess)
-  . catch(ui.signUpFailure);
+  .then(() => {
+    localStorage.removeItem('user');
+    store.user = null;
+  })
+  .then(ui.signUpSuccess)
+  .catch(ui.signUpFailure);
   }
 };
 

@@ -10,13 +10,20 @@ const blogHandlers = require('./blogs/events');
 const commentHandlers = require('./comments/events');
 const showHeader = require('./templates/page-header.hbs');
 const showCreateBlog = require('./templates/blog-templates/create-blog.hbs');
+const store = require('./store');
 
 const clearPage = function () {
   $('.main-body').empty();
   $('.hamburger').click();
 };
 
+// if (store.user) {
+//
+// }
+
 $(() => {
+  // sets the store.user parameter to the key 'user' in local storage
+  store.user = JSON.parse(localStorage.getItem('user'));
   setAPIOrigin(location, config);
   $('.main-body').append(showHeader);
   $('.change-password-dropdown').hide();
