@@ -34,6 +34,20 @@ const showBlog = function (id) {
   });
 };
 
+const showBlogsLogOut = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/blogs',
+    method: 'GET',
+  });
+};
+
+const showBlogCommentsLogOut = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/blogs/' + id + '/comments/',
+    method: 'GET',
+  });
+};
+
 const showBlogComments = function (id) {
   return $.ajax({
     url: config.apiOrigin + '/blogs/' + id + '/comments/',
@@ -71,5 +85,7 @@ module.exports = {
   showBlogs,
   destroyBlog,
   updateBlog,
-  showBlogComments
+  showBlogComments,
+  showBlogsLogOut,
+  showBlogCommentsLogOut
 };
