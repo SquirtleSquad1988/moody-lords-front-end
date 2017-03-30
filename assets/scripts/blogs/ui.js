@@ -46,6 +46,7 @@ const onShowBlogComments = function (data) {
   $(".show-blog-comments-log-out[data-id='" + current +"']").hide();
   $(".show-blog-comments[data-id='" + current +"']").hide();
   $(".hide-blog-comments[data-id='" + current +"']").show();
+
 };
 
 const showBlog = function () {

@@ -44,14 +44,25 @@ const onUpdateComment = function(event){
 
 };
 
+
+
 const addHandlers = () => {
   $('.main-body').on('submit', '.edit-blog-form', onCreateComment);
   $('.main-body').on('click', '.del-comment', onDeleteComment);
   $(".main-body").on("click", ".del-comment", function (e) {
     e.preventDefault();
-    let current = $(this).data('id');
-    $("#blog-comment[data-id='" + current +"']").fadeOut();
+    let current = ($(this).data('blogid'));
+    // $("#blog-comment[data-id='" + current +"']").fadeOut().remove();
+    $(".display-comments[data-id='" + current +"']").empty();
+    $(".display-comments[data-id='" + current +"']").text('Comment Successfully Deleted');
+    $(".show-blog-comments[data-id='" + current +"']").show();
+    $(".hide-blog-comments[data-id='" + current +"']").hide();
+
   });
+  // $(".main-body").on("click", ".del-comment", function (e) {
+  //   e.preventDefault();
+  //   let current = ($(this).data('blogid')).toString();
+  // });
 };
 
 

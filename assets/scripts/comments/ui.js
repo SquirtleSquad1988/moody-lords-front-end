@@ -20,17 +20,20 @@ const onPostSuccess = function () {
 const onPostSuccess2 = function (data) {
   let current = data.comment.blog_id;
   $(".display-comments[data-id='" + current +"']").empty();
-  $(".display-comments[data-id='" + current +"']").append();
+  $(".display-comments[data-id='" + current +"']").text('Comment Successfully Created');
   $(".hide-blog-comments[data-id='" + current +"']").hide();
   $(".show-blog-comments[data-id='" + current +"']").show();
   $(".edit-blog-form[data-id='" + current +"']").fadeOut();
   $('#comment-input').val('');
-
 };
 
 const onError = function () {
 
 };
+
+const onDeleteSuccess = function () {
+
+}
 
 const onUpdateSuccess = function () {
   $(".show-all-blogs").click();
