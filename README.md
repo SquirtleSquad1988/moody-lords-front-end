@@ -1,6 +1,5 @@
 # Moody Lords
 
-
 -   [Wireframes](http://imgur.com/a/YJwub)
 -   [ERD](http://imgur.com/a/hBUcj)
 
