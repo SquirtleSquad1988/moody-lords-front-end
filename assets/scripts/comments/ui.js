@@ -5,7 +5,7 @@ const showComments = function () {
 };
 
 const onCreateError = function () {
-  $('.log').text('Comment must be at least one character');
+  alertify.error("Something Went Wrong");
 };
 
 const onPatchSuccess = function () {
@@ -29,7 +29,7 @@ const onPostSuccess2 = function (data) {
 };
 
 const onError = function () {
-
+  alertify.error("Something Went Wrong");
 };
 
 const onDeleteSuccess = function () {
@@ -37,7 +37,7 @@ const onDeleteSuccess = function () {
 }
 
 const onUpdateSuccess = function () {
-  $(".show-all-blogs").click();
+
 };
 
 
