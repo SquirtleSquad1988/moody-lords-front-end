@@ -40,8 +40,7 @@ const onSignUp = function (event) {
 const onChangePassword = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  if (data.credentials)
-  api.passwordChange(data)
+    api.passwordChange(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.passwordChangeFailure);
 };
