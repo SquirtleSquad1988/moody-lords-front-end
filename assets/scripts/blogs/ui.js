@@ -49,15 +49,8 @@ const onShowBlogComments = function (data) {
 
 };
 
-const showBlog = function () {
-};
-
-const showSuccess = function () {
-
-};
-
 const onShowError = function () {
-  $('.log').text('This blog has no comments');
+  alertify.error("This blog has no comments");
 };
 
 const onPostSuccess = function () {
@@ -65,10 +58,11 @@ const onPostSuccess = function () {
   $('input').val('');
   $('textarea').val('');
   $('.main-body').append(blogRedirectPage);
+  alertify.success('Blog Successfully Created!');
 };
 
 const onError = function () {
-  $('.log').text('Parameters must be at least 1 character');
+  alertify.error("Something Went Wrong");
 };
 
 const onUpdateSuccess = function () {
@@ -79,21 +73,19 @@ const onUpdateSuccess = function () {
 };
 
 const onDeleteSuccess = function () {
-  $('.log').text('Blog Successfully Deleted');
+  alertify.success("Blog Successfully Deleted");
 };
 
 const onCreateError = function() {
-
+  alertify.error("Something Went Wrong");
 };
 
 
 
 module.exports = {
-  showBlog,
   showBlogs,
   onError,
   onPostSuccess,
-  showSuccess,
   onShowError,
   onUpdateSuccess,
   onShowBlogComments,

@@ -14,28 +14,33 @@ const signInSuccess = () => {
   $('#blog-view').show();
   $('#blog-view-log-out').hide();
   $('#create-blog').show();
+  alertify.success("Successfully Signed In");
 };
 
 const signInFailure = () => {
-
+  alertify.error("Something Went Wrong");
 };
 
 const signUpSuccess = () => {
   $('.main-body').empty();
   $('.main-body').append(showHeader);
   $('input').val('');
+  alertify.success("Successfully Signed Up");
 };
 
 const signUpFailure = () => {
+  alertify.error("Something Went Wrong");
 };
 
 const changePasswordSuccess = () => {
   $('.main-body').empty();
   $('.main-body').append(showHeader);
   $('input').val('');
+  alertify.success("Password Successfully Changed");
 };
 
 const passwordChangeFailure = () => {
+  alertify.error("Something Went Wrong");
 };
 
 const signOutSuccess = () => {
@@ -51,6 +56,7 @@ const signOutSuccess = () => {
   $('#create-blog').hide();
   localStorage.removeItem('user');
   store.user = null;
+  alertify.success("Successfully Signed Out");
 };
 
 module.exports = {

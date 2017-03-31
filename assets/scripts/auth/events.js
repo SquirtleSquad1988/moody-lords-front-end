@@ -30,10 +30,6 @@ const onSignUp = function (event) {
     .then(()=> {
       onSignIn(event, data);
     })
-  .then(() => {
-    localStorage.removeItem('user');
-    store.user = null;
-  })
   .then(ui.signUpSuccess)
   .catch(ui.signUpFailure);
   }

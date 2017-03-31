@@ -25,6 +25,7 @@ const onPostSuccess2 = function (data) {
   $(".show-blog-comments[data-id='" + current + "']").show();
   $(".edit-blog-form[data-id='" + current + "']").fadeOut();
   $("#comment-input[data-id='" + current + "']").val('');
+  alertify.success("Comment Successfully Created");
 };
 
 const onError = function () {
@@ -32,7 +33,7 @@ const onError = function () {
 };
 
 const onDeleteSuccess = function () {
-
+  alertify.success("Comment Successfully Deleted");
 }
 
 const onUpdateSuccess = function () {
