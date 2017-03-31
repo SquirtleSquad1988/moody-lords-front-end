@@ -7,6 +7,9 @@ const blogRedirectPage = require('../templates/blog-templates/blog-redirect.hbs'
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showBlogs = function (data) {
+  if(data.blogs.length === 0){
+    alertify.error("There Are No Blogs");
+  }
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
   let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
   $('.main-body').empty();
@@ -18,6 +21,9 @@ const showBlogs = function (data) {
 };
 
 const showBlogsLogOut = function (data) {
+  if(data.blogs.length === 0){
+    alertify.error("There Are No Blogs");
+  }
   console.log('showBlogsLogOut Function');
   let showBlogsHtml = showBlogsListLogOut({ blogs: data.blogs });
   $('.main-body').empty();
@@ -28,6 +34,9 @@ const showBlogsLogOut = function (data) {
 };
 
 const showBlogsAfterPost = function (data) {
+  if(data.blogs.length === 0){
+    alertify.error("There Are No Blogs");
+  }
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
   let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
   $('.main-body').empty();

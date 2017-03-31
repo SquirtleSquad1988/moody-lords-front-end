@@ -1,3 +1,6 @@
+<h1>Moody Lords</h1>
+<br>
+
 {{#each blogs as |blog|}}
   <div>
       <div class="blog-item" data-id="{{blog.id}}">
@@ -27,8 +30,8 @@
       </form> --}}
     <div>
     <form class="form-check edit-blog-form" data-id="{{blog.id}}">
-      <input data-id="{{blog.id}}" id="comment-input" class="form-control" type="text" value name="comment[comment]">
-      <input type="hidden" name="comment[blog_id]" value="{{blog.id}}">
+      <input data-id="{{blog.id}}" id="comment-input" class="form-control" type="text" value name="comment[comment]" required>
+      <input type="hidden" name="comment[blog_id]" value="{{blog.id}}" required>
       <button type="submit" class="btn btn-success" data-id="{{blog.id}}">Comment</button>
     </form>
 {{/each}}

@@ -34,7 +34,7 @@ const onError = function () {
 
 const onDeleteSuccess = function () {
   alertify.success("Comment Successfully Deleted");
-}
+};
 
 const onUpdateSuccess = function () {
 
@@ -49,5 +49,6 @@ module.exports = {
   onPostSuccess,
   onCreateError,
   onUpdateSuccess,
-  onPostSuccess2
+  onPostSuccess2,
+  onDeleteSuccess
 };
