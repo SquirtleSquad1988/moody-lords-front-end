@@ -311,6 +311,7 @@ body {
   padding: 0px;
   float: left;
   color: black;
+  border-radius: 25px;
 }
 
 .blog-info {
@@ -326,10 +327,9 @@ body {
   font-style: thin;
 }
 
-// .show-hide-comments {
-//   width: 40%;
-//   height: 13%;
-// }
+.show-hide-comments {
+  padding-top: 22px;
+}
 
 .fields {
   margin: 0 auto;

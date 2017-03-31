@@ -1,7 +1,7 @@
 {{#each comments as |comment|}}
   <div id="blog-comment" data-id="{{comment.id}}">
       <p>{{comment.comment}}</p>
-      <p>{{comment.blog_id}}</p>
+      <p>Last Updated: {{comment.updated_at}}</p>
       {{#if comment.editable}}
         <span class="label label-danger del-comment" data-blogid="{{comment.blog_id}}" data-id="{{comment.id}}">Delete</span>
       {{/if}}

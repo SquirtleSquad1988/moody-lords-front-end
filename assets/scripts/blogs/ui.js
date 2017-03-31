@@ -7,8 +7,12 @@ const blogRedirectPage = require('../templates/blog-templates/blog-redirect.hbs'
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showBlogs = function (data) {
-  if(data.blogs.length === 0){
+  if (data.blogs.length === 0) {
     alertify.error("There Are No Blogs");
+  }
+  for (let i = 0; i < data.blogs.length; i++) {
+    let content = data.blogs[i].updated_at;
+    data.blogs[i].updated_at = content.split('T')[0];
   }
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
   let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
@@ -21,8 +25,12 @@ const showBlogs = function (data) {
 };
 
 const showBlogsLogOut = function (data) {
-  if(data.blogs.length === 0){
+  if (data.blogs.length === 0) {
     alertify.error("There Are No Blogs");
+  }
+  for (let i = 0; i < data.blogs.length; i++) {
+    let content = data.blogs[i].updated_at;
+    data.blogs[i].updated_at = content.split('T')[0];
   }
   console.log('showBlogsLogOut Function');
   let showBlogsHtml = showBlogsListLogOut({ blogs: data.blogs });
@@ -34,8 +42,12 @@ const showBlogsLogOut = function (data) {
 };
 
 const showBlogsAfterPost = function (data) {
-  if(data.blogs.length === 0){
+  if (data.blogs.length === 0) {
     alertify.error("There Are No Blogs");
+  }
+  for (let i = 0; i < data.blogs.length; i++) {
+    let content = data.blogs[i].updated_at;
+    data.blogs[i].updated_at = content.split('T')[0];
   }
   let showBlogsHtml = showBlogsList({ blogs: data.blogs });
   let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
@@ -48,6 +60,10 @@ const showBlogsAfterPost = function (data) {
 
 const onShowBlogComments = function (data) {
   console.log(data);
+  for (let i = 0; i < data.comments.length; i++) {
+    let content = data.comments[i].updated_at;
+    data.comments[i].updated_at = content.split('T')[0];
+  }
   let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
   let current = data.comments[0].blog_id;
   $(".display-comments[data-id='" + current +"']").empty();

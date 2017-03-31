@@ -20,14 +20,10 @@
         </div>
         <div class="fields" data-id="{{blog.id}}">
           <p><small>{{blog.body}}</small></p>
+          <p>Last Updated: {{blog.updated_at}}</p>
           <div class="display-comments" data-id="{{blog.id}}"></div>
         </div>
       </div>
-      {{!-- <form class="form-check edit-blog-form" data-id="{{blog.id}}">
-        <input data-id="{{blog.id}}" class="form-control" type="text" value name="comment[comment]">
-        <input type="hidden" name="comment[blog_id]" value="{{blog.id}}">
-        <button type="submit" class="btn btn-success" data-id="{{blog.id}}">Comment</button>
-      </form> --}}
     <div>
     <form class="form-check edit-blog-form" data-id="{{blog.id}}">
       <input data-id="{{blog.id}}" id="comment-input" class="form-control" type="text" value name="comment[comment]" required>
