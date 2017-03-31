@@ -34,7 +34,6 @@ const showBlogsLogOut = function (data) {
       let content = data.blogs[i].updated_at;
       data.blogs[i].updated_at = content.split('T')[0];
     }
-    console.log('showBlogsLogOut Function');
     let showBlogsHtml = showBlogsListLogOut({ blogs: data.blogs });
     $('.main-body').empty();
     $('.main-body').append(showBlogsHtml);
@@ -63,7 +62,6 @@ const showBlogsAfterPost = function (data) {
 };
 
 const onShowBlogComments = function (data) {
-  console.log(data);
   for (let i = 0; i < data.comments.length; i++) {
     let content = data.comments[i].updated_at;
     data.comments[i].updated_at = content.split('T')[0];

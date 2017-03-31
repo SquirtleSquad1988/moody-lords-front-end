@@ -37,7 +37,6 @@ const onDeleteComment = function(event){
 const onUpdateComment = function(event){
   event.preventDefault();
   let info = getFormFields(event.target);
-  console.log(+$(this).data('id'));
   api.updateComment(+$(this).data('id'), info)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);

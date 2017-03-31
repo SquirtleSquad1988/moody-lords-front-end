@@ -300,6 +300,18 @@ body {
   background: linear-gradient(to left, #556270 , #FF6B6B);
 }
 
+.carousel {
+  border-top: 5px black;
+  border-left: 5px black;
+  border-right: 5px black;
+  border-bottom: 5px black;
+  margin: 1px solid white;
+  border-style: solid;
+  position: relative;
+}
+
+
+
 .blog-item {
   border: 1px black;
   display: block;
@@ -323,8 +335,8 @@ body {
   border-right: 0px black;
   border-bottom: 1px black;
   border-style: solid;
-  padding: 0px;
-  margin: 0px;
+  padding: 2px;
+  margin: 2px;
   font-style: thin;
 }
 
@@ -389,6 +401,7 @@ span:hover {
   text-align: center;
   margin: 0 auto;
   padding: 0px;
+  border: 0px;
 }
 
 .del-comment,
