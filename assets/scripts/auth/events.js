@@ -26,12 +26,13 @@ const onSignUp = function (event) {
   let data = getFormFields(event.target);
   if (data.credentials.password === data.credentials.password_confirmation) {
     api.signUp(data)
-
     .then(()=> {
       onSignIn(event, data);
     })
   .then(ui.signUpSuccess)
   .catch(ui.signUpFailure);
+  } else {
+    alertify.error('Passwords Must Match!');
   }
 };
 
@@ -39,6 +40,7 @@ const onSignUp = function (event) {
 const onChangePassword = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+  if (data.credentials)
   api.passwordChange(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.passwordChangeFailure);
