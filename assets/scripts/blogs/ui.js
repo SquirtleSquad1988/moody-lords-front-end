@@ -9,53 +9,57 @@ const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 const showBlogs = function (data) {
   if (data.blogs.length === 0) {
     alertify.error("There Are No Blogs");
+  } else {
+    for (let i = 0; i < data.blogs.length; i++) {
+      let content = data.blogs[i].updated_at;
+      data.blogs[i].updated_at = content.split('T')[0];
+    }
+    let showBlogsHtml = showBlogsList({ blogs: data.blogs });
+    let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
+    $('.main-body').empty();
+    $('.main-body').append(showBlogsHtml);
+    $('.main-body').append(showBlogsEditHtml);
+    $('.hamburger').click();
+    $(".hide-blog-comments").hide();
+    $('.edit-blog-form').hide();
   }
-  for (let i = 0; i < data.blogs.length; i++) {
-    let content = data.blogs[i].updated_at;
-    data.blogs[i].updated_at = content.split('T')[0];
-  }
-  let showBlogsHtml = showBlogsList({ blogs: data.blogs });
-  let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
-  $('.main-body').empty();
-  $('.main-body').append(showBlogsHtml);
-  $('.main-body').append(showBlogsEditHtml);
-  $('.hamburger').click();
-  $(".hide-blog-comments").hide();
-  $('.edit-blog-form').hide();
+
 };
 
 const showBlogsLogOut = function (data) {
   if (data.blogs.length === 0) {
     alertify.error("There Are No Blogs");
+  } else {
+    for (let i = 0; i < data.blogs.length; i++) {
+      let content = data.blogs[i].updated_at;
+      data.blogs[i].updated_at = content.split('T')[0];
+    }
+    console.log('showBlogsLogOut Function');
+    let showBlogsHtml = showBlogsListLogOut({ blogs: data.blogs });
+    $('.main-body').empty();
+    $('.main-body').append(showBlogsHtml);
+    $('.hamburger').click();
+    $(".hide-blog-comments").hide();
+    $('.edit-blog-form').hide();
   }
-  for (let i = 0; i < data.blogs.length; i++) {
-    let content = data.blogs[i].updated_at;
-    data.blogs[i].updated_at = content.split('T')[0];
-  }
-  console.log('showBlogsLogOut Function');
-  let showBlogsHtml = showBlogsListLogOut({ blogs: data.blogs });
-  $('.main-body').empty();
-  $('.main-body').append(showBlogsHtml);
-  $('.hamburger').click();
-  $(".hide-blog-comments").hide();
-  $('.edit-blog-form').hide();
 };
 
 const showBlogsAfterPost = function (data) {
   if (data.blogs.length === 0) {
     alertify.error("There Are No Blogs");
+  } else {
+    for (let i = 0; i < data.blogs.length; i++) {
+      let content = data.blogs[i].updated_at;
+      data.blogs[i].updated_at = content.split('T')[0];
+    }
+    let showBlogsHtml = showBlogsList({ blogs: data.blogs });
+    let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
+    $('.main-body').empty();
+    $('.main-body').append(showBlogsHtml);
+    $('.main-body').append(showBlogsEditHtml);
+    $(".hide-blog-comments").hide();
+    $('.edit-blog-form').hide();
   }
-  for (let i = 0; i < data.blogs.length; i++) {
-    let content = data.blogs[i].updated_at;
-    data.blogs[i].updated_at = content.split('T')[0];
-  }
-  let showBlogsHtml = showBlogsList({ blogs: data.blogs });
-  let showBlogsEditHtml = renderEditBlogs({ blogs: data.blogs });
-  $('.main-body').empty();
-  $('.main-body').append(showBlogsHtml);
-  $('.main-body').append(showBlogsEditHtml);
-  $(".hide-blog-comments").hide();
-  $('.edit-blog-form').hide();
 };
 
 const onShowBlogComments = function (data) {
@@ -95,6 +99,7 @@ const onUpdateSuccess = function () {
   $('input').val('');
   $('textarea').val('');
   $('.main-body').append(blogRedirectPage);
+  alertify.success('Blog Successfully Edited!');
 };
 
 const onDeleteSuccess = function () {
@@ -117,5 +122,5 @@ module.exports = {
   onDeleteSuccess,
   onCreateError,
   showBlogsAfterPost,
-  showBlogsLogOut
+  showBlogsLogOut,
 };
