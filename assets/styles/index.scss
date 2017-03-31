@@ -311,7 +311,8 @@ body {
   padding: 0px;
   float: left;
   color: black;
-  border-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 .blog-info {
@@ -328,21 +329,47 @@ body {
 }
 
 .show-hide-comments {
-  padding-top: 22px;
+  position: absolute;
+  padding-top: 0px;
+  bottom: 0;
+  left: 0;
+  float: left;
 }
 
 .fields {
   margin: 0 auto;
-  height: 80%;
+  height: 87%;
   width: 100%;
   border: 1px #000000;
   border-style: none;
   overflow: scroll;
+  position: relative;
+}
+
+pre {
+  width: 100%;
+  height: 93%;
+  font-family: 'Slabo 27px', serif;
+  font-size: 17px;
+}
+
+.blog-time {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+  margin-bottom: 0px;
+  padding-top: 22px;
 }
 
 .deets {
   width: 60%;
   float: left;
+  margin-bottom: 0px;
+}
+
+.table-head {
+  background: white;
 }
 
 span:hover {
@@ -363,7 +390,8 @@ span:hover {
   padding: 0px;
 }
 
-.del-comment {
+.del-comment,
+.del-disabled {
   float: left;
 }
 

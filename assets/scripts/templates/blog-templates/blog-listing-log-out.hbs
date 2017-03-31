@@ -8,16 +8,17 @@
           <ul class="deets" data-id="{{blog.id}}">
             <h4>{{blog.title}}<h4>
           </ul>
+        </div>
+        <div class="fields" data-id="{{blog.id}}">
+          <pre>{{blog.body}}</pre>
+          <p class="blog-time">Last Updated: {{blog.updated_at}}</p>
           <div class="show-hide-comments">
             <span class="label label-success show-blog-comments-log-out" data-id="{{blog.id}}">Show Comments</span>
             <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
           </div>
-        </div>
-        <div class="fields" data-id="{{blog.id}}">
-          <p><small>{{blog.body}}</small></p>
-          <p>Last Updated: {{blog.updated_at}}</p>
-          <div class="display-comments" data-id="{{blog.id}}"></div>
+          {{!-- <div class="display-comments" data-id="{{blog.id}}"></div> --}}
         </div>
       </div>
     </div>
+    <div class="display-comments" data-id="{{blog.id}}"></div>
 {{/each}}

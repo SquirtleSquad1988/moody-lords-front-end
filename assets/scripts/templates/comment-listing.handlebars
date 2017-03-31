@@ -10,7 +10,7 @@
 
 <div id="blog-comment" data-id="{{comment.id}}">
   <table class="table table-striped">
-    <thead>
+    <thead class="table-head">
       <tr>
         <th>#</th>
         <th>Comment</th>
@@ -25,6 +25,8 @@
         <th>{{comment.updated_at}}</th>
         {{#if comment.editable}}
           <th><span class="label label-danger del-comment" data-blogid="{{comment.blog_id}}" data-id="{{comment.id}}">Delete</span></th>
+        {{else}}
+          <th><span class="label label-default del-disabled">Not Yours</span></th>
         {{/if}}
       </tbody>
     {{/each}}
