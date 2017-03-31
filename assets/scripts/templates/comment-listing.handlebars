@@ -1,4 +1,4 @@
-{{#each comments as |comment|}}
+<!-- {{#each comments as |comment|}}
   <div id="blog-comment" data-id="{{comment.id}}">
       <p>{{comment.comment}}</p>
       <p>Last Updated: {{comment.updated_at}}</p>
@@ -6,4 +6,27 @@
         <span class="label label-danger del-comment" data-blogid="{{comment.blog_id}}" data-id="{{comment.id}}">Delete</span>
       {{/if}}
   </div>
-{{/each}}
+{{/each}} -->
+
+<div id="blog-comment" data-id="{{comment.id}}">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Comment</th>
+        <th>Created</th>
+        <th>Delete?</th>
+      </tr>
+    </thead>
+    {{#each comments as |comment|}}
+      <tbody>
+        <th>{{comment.id}}</th>
+        <th>{{comment.comment}}</th>
+        <th>{{comment.updated_at}}</th>
+        {{#if comment.editable}}
+          <th><span class="label label-danger del-comment" data-blogid="{{comment.blog_id}}" data-id="{{comment.id}}">Delete</span></th>
+        {{/if}}
+      </tbody>
+    {{/each}}
+  </table>
+</div>
