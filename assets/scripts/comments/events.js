@@ -54,7 +54,6 @@ const addHandlers = () => {
     let current = ($(this).data('blogid'));
     // $("#blog-comment[data-id='" + current +"']").fadeOut().remove();
     $(".display-comments[data-id='" + current +"']").empty();
-    $(".display-comments[data-id='" + current +"']").text('Comment Successfully Deleted');
     $(".show-blog-comments[data-id='" + current +"']").show();
     $(".hide-blog-comments[data-id='" + current +"']").hide();
 

@@ -94,7 +94,6 @@ const addHandlers = () => {
     let current = $(this).data('id');
     let currentBlog = ($(this).data('blogid'));
     $(".edit-blog-form[data-id='" + current +"']").fadeToggle();
-    $(".display-comments[data-id='" + currentBlog +"']").text('Comment Successfully Created');
   });
   // Show/Hide Button
   $(".main-body").on("click", ".hide-blog-comments", function (e) {
