@@ -56,8 +56,8 @@ things I learned while trying was a good experience that I will build off of.
 
 # Wireframes and ERD
 
--   [Wireframes](http://imgur.com/a/YJwub)
--   [ERD](http://imgur.com/a/hBUcj)
+-  [Wireframes](http://imgur.com/a/YJwub)
+-  [ERD](http://imgur.com/a/hBUcj)
 
 # Links
 
