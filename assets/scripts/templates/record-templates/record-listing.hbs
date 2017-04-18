@@ -1,0 +1,20 @@
+<div id="record-listing">
+  <table class="table table-striped">
+    <thead class="table-head">
+      <tr>
+        <th>Album</th>
+        <th>Artist</th>
+        <th>Press Date</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    {{#each records as |record|}}
+      <tbody>
+        <th>{{record.title}}</th>
+        <th>{{record.artist}}</th>
+        <th>{{record.press_date}}</th>
+        <th>{{record.price}}</th>
+      </tbody>
+    {{/each}}
+  </table>
+</div>

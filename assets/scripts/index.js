@@ -8,6 +8,7 @@ const showChangePw = require('./templates/auth-templates/change-pw.hbs');
 const handlers = require('./auth/events');
 const blogHandlers = require('./blogs/events');
 const commentHandlers = require('./comments/events');
+const recordHandlers = require('./records/events');
 const showHeader = require('./templates/page-header.hbs');
 const showCreateBlog = require('./templates/blog-templates/create-blog.hbs');
 const store = require('./store');
@@ -16,10 +17,6 @@ const clearPage = function () {
   $('.main-body').empty();
   $('.hamburger').click();
 };
-
-// if (store.user) {
-//
-// }
 
 $(() => {
   // sets the store.user parameter to the key 'user' in local storage
@@ -63,3 +60,4 @@ $(() => {
 $(document).ready(handlers.addHandlers);
 $(document).ready(blogHandlers.addHandlers);
 $(document).ready(commentHandlers.addHandlers);
+$(document).ready(recordHandlers.addHandlers);
