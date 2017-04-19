@@ -3,6 +3,7 @@
 const api = require('./api.js');
 const ui = require('./ui.js');
 const store = require('../store');
+const cart = require('../cart');
 const getFormFields = require('../../../lib/get-form-fields');
 
 const onCreateRecord = function (event) {
@@ -24,6 +25,12 @@ const onShowRecord = function (event) {
     .catch(ui.onShowError);
 };
 
+const addRecordToCart = function (event) {
+  let data = getFormFields(event.target);
+  cart.items.push(data.record);
+  console.log(data.record);
+};
+
 const onDeleteRecord = function(event){
   event.preventDefault();
   // let bookId = $('#delete-book-id').val();
@@ -40,18 +47,17 @@ const onUpdateRecord = function(event){
   api.updateRecord(+$(this).data('id'), info)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);
-
 };
-
-
 
 const addHandlers = () => {
   $('.navbar').on('click', '#list-records', onShowRecord);
-  $('.main-body').on('click', '.buy-record', function(e) {
+  $('.main-body').on('submit', '.add-record-cart', function(e) {
     e.preventDefault();
     let current = $(this).data('id');
     $(".buy-record[data-id='" + current +"']").addClass('hidden');
     $(".remove-record[data-id='" + current +"']").removeClass('hidden');
+    addRecordToCart(e);
+    console.log(cart.getItems());
   });
   $('.main-body').on('click', '.remove-record', function(e) {
     e.preventDefault();
@@ -60,8 +66,6 @@ const addHandlers = () => {
     $(".buy-record[data-id='" + current +"']").removeClass('hidden');
   });
 };
-
-
 
 module.exports = {
   onUpdateRecord,
