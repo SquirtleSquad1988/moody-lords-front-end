@@ -6,6 +6,7 @@
         <th>Artist</th>
         <th>Press Date</th>
         <th>Price</th>
+        <th>Purchase</th>
       </tr>
     </thead>
     {{#each records as |record|}}
@@ -14,6 +15,7 @@
         <th>{{record.artist}}</th>
         <th>{{record.press_date}}</th>
         <th>{{record.price}}</th>
+        <th><span class="label label-success buy-record" data-id="{{record.id}}">Add To Cart</span><span class="label label-danger remove-record hidden"data-id="{{record.id}}">Remove From Cart</span></th>
       </tbody>
     {{/each}}
   </table>

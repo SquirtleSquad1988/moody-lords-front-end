@@ -47,6 +47,18 @@ const onUpdateRecord = function(event){
 
 const addHandlers = () => {
   $('.navbar').on('click', '#list-records', onShowRecord);
+  $('.main-body').on('click', '.buy-record', function(e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $(".buy-record[data-id='" + current +"']").addClass('hidden');
+    $(".remove-record[data-id='" + current +"']").removeClass('hidden');
+  });
+  $('.main-body').on('click', '.remove-record', function(e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $(".remove-record[data-id='" + current +"']").addClass('hidden');
+    $(".buy-record[data-id='" + current +"']").removeClass('hidden');
+  });
 };
 
 
