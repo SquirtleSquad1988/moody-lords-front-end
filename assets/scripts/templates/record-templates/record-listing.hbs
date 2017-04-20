@@ -19,6 +19,7 @@
           <td>{{record.price}}</td>
           <td>
             <form class='add-record-cart' data-id="{{record.id}}">
+              <input class="identifier hide" name="record[id]" type="text" value="{{record.id}}" readonly>
               <input class="title hide" name="record[title]" type="text" value="{{record.title}}" readonly>
               <input class="artist hide" name="record[artist]" type="text" value="{{record.artist}}" readonly>
               <input class="press_date hide" name="record[press_date]" type="text" value="{{record.press_date}}" readonly>

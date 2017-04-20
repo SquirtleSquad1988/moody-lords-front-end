@@ -26,9 +26,28 @@ const onShowRecord = function (event) {
 };
 
 const addRecordToCart = function (event) {
+  event.preventDefault();
   let data = getFormFields(event.target);
   cart.items.push(data.record);
-  console.log(data.record);
+  console.log(cart.getItems());
+};
+
+const removeRecordFromCart = function (event) {
+  event.preventDefault();
+  // grabs the id number of record object
+  let id = event.target.dataset.id;
+  // returns the whole record object that matches
+  // the id of the delete record button
+  let delRecord = cart.items.find((record) => {
+    if (record.id === id) {
+      return record;
+    }
+  });
+  // finds the index of the record object in the cart.items array
+  let delRecordIndex = cart.items.indexOf(delRecord);
+  // removes the record object at the proper index (determined by delRecordIndex)
+  cart.items.splice(delRecordIndex, 1);
+  console.log(cart.getItems());
 };
 
 const onDeleteRecord = function(event){
@@ -57,13 +76,13 @@ const addHandlers = () => {
     $(".buy-record[data-id='" + current +"']").addClass('hidden');
     $(".remove-record[data-id='" + current +"']").removeClass('hidden');
     addRecordToCart(e);
-    console.log(cart.getItems());
   });
   $('.main-body').on('click', '.remove-record', function(e) {
     e.preventDefault();
     let current = $(this).data('id');
     $(".remove-record[data-id='" + current +"']").addClass('hidden');
     $(".buy-record[data-id='" + current +"']").removeClass('hidden');
+    removeRecordFromCart(e);
   });
 };
 
