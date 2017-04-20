@@ -1,13 +1,3 @@
-<!-- {{#each comments as |comment|}}
-  <div id="blog-comment" data-id="{{comment.id}}">
-      <p>{{comment.comment}}</p>
-      <p>Last Updated: {{comment.updated_at}}</p>
-      {{#if comment.editable}}
-        <span class="label label-danger del-comment" data-blogid="{{comment.blog_id}}" data-id="{{comment.id}}">Delete</span>
-      {{/if}}
-  </div>
-{{/each}} -->
-
 <div id="blog-comment" data-id="{{comment.id}}">
   <table class="table table-striped">
     <thead class="table-head">
