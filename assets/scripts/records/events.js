@@ -84,6 +84,14 @@ const addHandlers = () => {
     $(".buy-record[data-id='" + current +"']").removeClass('hidden');
     removeRecordFromCart(e);
   });
+  $('#shoppingCart').on('click', '.remove-record-cart', function(e) {
+    e.preventDefault();
+    let current = $(this).data('id');
+    $(".remove-record[data-id='" + current +"']").addClass('hidden');
+    $(".buy-record[data-id='" + current +"']").removeClass('hidden');
+    removeRecordFromCart(e);
+    $('#shoppingCart').modal('hide');
+  });
 };
 
 module.exports = {

@@ -46,7 +46,6 @@ const addHandlers = () => {
     e.preventDefault();
     let current = $(this).data('id');
     onShowOrder();
-    console.log('sup');
   });
 };
 
