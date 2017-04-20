@@ -4,6 +4,7 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const store = require('../store');
 const cart = require('../cart');
+const orders = require('../orders/ui');
 const getFormFields = require('../../../lib/get-form-fields');
 
 const onCreateRecord = function (event) {
@@ -47,6 +48,7 @@ const removeRecordFromCart = function (event) {
   let delRecordIndex = cart.items.indexOf(delRecord);
   // removes the record object at the proper index (determined by delRecordIndex)
   cart.items.splice(delRecordIndex, 1);
+  orders.showOrders();
   console.log(cart.getItems());
 };
 
@@ -90,7 +92,6 @@ const addHandlers = () => {
     $(".remove-record[data-id='" + current +"']").addClass('hidden');
     $(".buy-record[data-id='" + current +"']").removeClass('hidden');
     removeRecordFromCart(e);
-    $('#shoppingCart').modal('hide');
   });
 };
 
