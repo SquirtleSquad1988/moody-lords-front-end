@@ -8,17 +8,26 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const onCreateOrder = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.createOrder(data)
-  .then((response) => {
-    store.blog = response.blog;
-    ui.onPostSuccess(response.blog);
-  })
-  .then(ui.onPostSuccess2(data))
-  .catch(ui.onCreateError);
+  let data = {
+    order: {
+      records: JSON.stringify(cart.getItems()),
+      complete: false
+    }
+  };
+  if (cart.items.length === 0){
+    alertify.error("The Cart Is Empty");
+  } else {
+    api.createOrder(data)
+    .then((response) => {
+      store.order = response.order;
+      ui.onPostSuccess(response.order);
+      console.log('Data sent to server: ', data);
+    })
+    .catch(ui.onCreateError);
+  }
 };
 
-const onShowOrder = function (event) {
+const onShowOrder = function () {
   ui.showOrders();
 };
 
@@ -44,9 +53,9 @@ const onUpdateOrder = function(event){
 const addHandlers = () => {
   $('body').on('click', '#cart-button', function(e) {
     e.preventDefault();
-    let current = $(this).data('id');
     onShowOrder();
   });
+  $('#shoppingCart').on('click', '#create-order', onCreateOrder);
 };
 
 module.exports = {

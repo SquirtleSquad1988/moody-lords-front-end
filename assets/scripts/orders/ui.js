@@ -19,7 +19,8 @@ const onCreateError = function () {
 const onPatchSuccess = function () {
 };
 
-const onPostSuccess = function () {
+const onPostSuccess = function (data) {
+  console.log('Server response: ', data);
 };
 
 const onPostSuccess2 = function () {
