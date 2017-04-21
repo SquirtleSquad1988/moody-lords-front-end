@@ -20,7 +20,7 @@ const onPatchSuccess = function () {
 };
 
 const onPostSuccess = function (data) {
-  console.log('Server response: ', data);
+  console.log('Server response: ', JSON.parse(data.records));
 };
 
 const onPostSuccess2 = function () {

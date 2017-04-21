@@ -22,6 +22,7 @@ const onCreateOrder = function (event) {
       store.order = response.order;
       ui.onPostSuccess(response.order);
       console.log('Data sent to server: ', data);
+      console.log('Stringified array ', JSON.stringify(cart.getItems()))
     })
     .catch(ui.onCreateError);
   }
