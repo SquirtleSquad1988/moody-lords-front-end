@@ -51,8 +51,8 @@ const updateOrder = function(id, data) {
     headers: {
       Authorization: `Token token=${store.user.token}`,
   },
-  data
-});
+    data
+  });
 };
 
 module.exports = {

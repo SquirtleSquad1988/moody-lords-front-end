@@ -4,6 +4,7 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const store = require('../store');
 const cart = require('../cart');
+const orderComplete = require('../orderdone');
 const getFormFields = require('../../../lib/get-form-fields');
 
 const onCreateOrder = function (event) {
@@ -16,13 +17,18 @@ const onCreateOrder = function (event) {
   };
   if (cart.items.length === 0){
     alertify.error("The Cart Is Empty");
-  } else {
+  } else if (orderComplete.getId() === '') {
     api.createOrder(data)
-    .then((response) => {
-      store.order = response.order;
-      ui.onPostSuccess(response.order);
-      console.log('Data sent to server: ', data);
-      console.log('Stringified array ', JSON.stringify(cart.getItems()))
+    .then((data) => {
+      orderComplete.setId(data.order.id);
+      console.log(JSON.parse(data.order.records));
+    })
+    .catch(ui.onCreateError);
+  } else {
+    api.updateOrder(orderComplete.getId(), data)
+    .then((data) => {
+      console.log(JSON.parse(data.order.records));
+      ui.showOrders();
     })
     .catch(ui.onCreateError);
   }
