@@ -17,7 +17,7 @@ const onCreateOrder = function (event) {
   };
   if (cart.items.length === 0){
     alertify.error("The Cart Is Empty");
-  } else if (orderComplete.getId() === '') {
+  } else if (cart.items.length > 0 && orderComplete.getId() === '') {
     api.createOrder(data)
     .then((data) => {
       orderComplete.setId(data.order.id);
