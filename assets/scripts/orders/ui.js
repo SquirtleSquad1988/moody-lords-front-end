@@ -13,6 +13,14 @@ const showOrders = function (data, total) {
   }
 };
 
+const clearCart = function () {
+  for (let i = 0; i < cart.items.length; i++) {
+    cart.items.pop();
+  }
+  cart.items.pop();
+  $('#shoppingCart').modal('hide');
+};
+
 const onCreateError = function () {
 };
 
@@ -47,5 +55,6 @@ module.exports = {
   onCreateError,
   onUpdateSuccess,
   onPostSuccess2,
-  onDeleteSuccess
+  onDeleteSuccess,
+  clearCart
 };

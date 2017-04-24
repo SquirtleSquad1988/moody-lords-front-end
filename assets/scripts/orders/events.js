@@ -4,6 +4,7 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const store = require('../store');
 const cart = require('../cart');
+const stripe = require('../charges/events')
 const orderComplete = require('../orderdone');
 const getFormFields = require('../../../lib/get-form-fields');
 
@@ -21,6 +22,7 @@ const onCreateOrder = function (event) {
     api.createOrder(data)
     .then((data) => {
       orderComplete.setId(data.order.id);
+      stripe.onCreateCharge(event, data.order);
       console.log(JSON.parse(data.order.records));
     })
     .catch(ui.onCreateError);
@@ -30,6 +32,7 @@ const onCreateOrder = function (event) {
       console.log(JSON.parse(data.order.records));
       let total = cart.getTotal();
       ui.showOrders(data, total);
+      stripe.onCreateCharge(event, data.order);
     })
     .catch(ui.onCreateError);
   }
