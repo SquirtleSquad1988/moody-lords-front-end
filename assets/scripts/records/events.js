@@ -5,6 +5,7 @@ const ui = require('./ui.js');
 const store = require('../store');
 const cart = require('../cart');
 const orders = require('../orders/ui');
+const orderEvents = require('../orders/events');
 const getFormFields = require('../../../lib/get-form-fields');
 
 const onCreateRecord = function (event) {
@@ -48,7 +49,7 @@ const removeRecordFromCart = function (event) {
   let delRecordIndex = cart.items.indexOf(delRecord);
   // removes the record object at the proper index (determined by delRecordIndex)
   cart.items.splice(delRecordIndex, 1);
-  orders.showOrders();
+  orderEvents.onShowOrder();
   console.log(cart.getItems());
 };
 

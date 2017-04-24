@@ -28,14 +28,16 @@ const onCreateOrder = function (event) {
     api.updateOrder(orderComplete.getId(), data)
     .then((data) => {
       console.log(JSON.parse(data.order.records));
-      ui.showOrders();
+      let total = cart.getTotal();
+      ui.showOrders(data, total);
     })
     .catch(ui.onCreateError);
   }
 };
 
 const onShowOrder = function () {
-  ui.showOrders();
+  let total = cart.getTotal();
+  ui.showOrders(cart.items, total);
 };
 
 
@@ -61,6 +63,7 @@ const addHandlers = () => {
   $('body').on('click', '#cart-button', function(e) {
     e.preventDefault();
     onShowOrder();
+    console.log(cart.getTotal());
   });
   $('#shoppingCart').on('click', '#create-order', onCreateOrder);
 };

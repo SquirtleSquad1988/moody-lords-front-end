@@ -3,12 +3,12 @@
 const showRecordsList = require('../templates/record-templates/shopping-cart.hbs');
 const cart = require('../cart');
 
-const showOrders = function () {
+const showOrders = function (data, total) {
   if (cart.items.length === 0) {
     $('.cart-contents').empty();
     $('.cart-contents').text('You have no records queued for purchase!');
   } else {
-    let showRecordsHtml = showRecordsList({ records: cart.items });
+    let showRecordsHtml = showRecordsList({ records: cart.items,  total: total });
     $('.cart-contents').html(showRecordsHtml);
   }
 };
