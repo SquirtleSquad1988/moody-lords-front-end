@@ -16,8 +16,9 @@ const onCreateCharge = function (event, order) {
     locale: 'auto',
     token: function(token) {
       let creds = {
-        token: token.id,
+        charge: {token: token.id},
       };
+      console.log(creds);
       api.createCharge(creds)
         .then(() => {
           let data = {
