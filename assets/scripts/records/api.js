@@ -44,21 +44,9 @@ const destroyRecord = function(id){
   });
 };
 
-const updateRecord = function(id, data) {
-  return $.ajax({
-    url: config.apiOrigin + '/records/' + id,
-    method: 'PATCH',
-    headers: {
-      Authorization: `Token token=${store.user.token}`,
-  },
-  data
-});
-};
-
 module.exports = {
   createRecord,
   showRecord,
   showRecords,
-  destroyRecord,
-  updateRecord
+  destroyRecord
 };
