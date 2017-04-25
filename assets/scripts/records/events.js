@@ -4,6 +4,7 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const store = require('../store');
 const cart = require('../cart');
+const orders = require('../orders/ui');
 const orderEvents = require('../orders/events');
 const getFormFields = require('../../../lib/get-form-fields');
 
@@ -72,9 +73,19 @@ const addHandlers = () => {
   $('.main-body').on('submit', '.add-record-cart', function(e) {
     e.preventDefault();
     let current = $(this).data('id');
-    $(".buy-record[data-id='" + current +"']").addClass('hidden');
-    $(".remove-record[data-id='" + current +"']").removeClass('hidden');
-    addRecordToCart(e);
+    let id = event.target.dataset.id;
+    let findRecord = cart.items.find((record) => {
+      if (record.id === id) {
+        return record;
+      }
+    });
+    if (findRecord) {
+      alertify.error("There Are No Records for Sale");
+    } else {
+      $(".buy-record[data-id='" + current +"']").addClass('hidden');
+      $(".remove-record[data-id='" + current +"']").removeClass('hidden');
+      addRecordToCart(e);
+    }
   });
   $('.main-body').on('click', '.remove-record', function(e) {
     e.preventDefault();
