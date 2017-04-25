@@ -5,7 +5,8 @@ const ui = require('./ui.js');
 const cart = require('../cart');
 const ordersUI = require('../orders/ui');
 const ordersAPI = require('../orders/api');
-const orderEvents = require('../orders/events');
+const authUI = require('../auth/ui');
+const recordAPI = require('../records/api');
 const orderComplete = require('../orderdone');
 
 const onCreateCharge = function (event, order) {
@@ -27,9 +28,17 @@ const onCreateCharge = function (event, order) {
                 complete: true
             }
           };
+          let deletePurchasedRecords = function () {
+            for (let i = 0; i < cart.items.length; i++) {
+              recordAPI.destroyRecord(cart.items[i].id);
+            }
+          };
+          deletePurchasedRecords();
           ordersAPI.updateOrder(order.id, data);
           orderComplete.setId('');
           ordersUI.clearCart();
+          authUI.homepageRender();
+          alertify.success("Records Successfully Purchased");
         })
         .catch(() => {
           alertify.error("There was an error processing your order");

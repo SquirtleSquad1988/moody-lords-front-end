@@ -5,7 +5,7 @@ const config = require('./config');
 const showSignUp = require('./templates/auth-templates/sign-up.hbs');
 const showSignIn = require('./templates/auth-templates/sign-in.hbs');
 const showChangePw = require('./templates/auth-templates/change-pw.hbs');
-const handlers = require('./auth/events');
+const authHandlers = require('./auth/events');
 const blogHandlers = require('./blogs/events');
 const commentHandlers = require('./comments/events');
 const recordHandlers = require('./records/events');
@@ -13,7 +13,6 @@ const orderHandlers = require('./orders/events');
 const showHeader = require('./templates/page-header.hbs');
 const showCreateBlog = require('./templates/blog-templates/create-blog.hbs');
 const store = require('./store');
-const cart = ('./cart');
 
 const clearPage = function () {
   $('.main-body').empty();
@@ -58,7 +57,7 @@ $(() => {
   });
 });
 
-$(document).ready(handlers.addHandlers);
+$(document).ready(authHandlers.addHandlers);
 $(document).ready(blogHandlers.addHandlers);
 $(document).ready(commentHandlers.addHandlers);
 $(document).ready(recordHandlers.addHandlers);

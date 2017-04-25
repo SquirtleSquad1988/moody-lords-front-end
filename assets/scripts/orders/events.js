@@ -2,9 +2,8 @@
 
 const api = require('./api.js');
 const ui = require('./ui.js');
-const store = require('../store');
 const cart = require('../cart');
-const stripe = require('../charges/events')
+const stripe = require('../charges/events');
 const orderComplete = require('../orderdone');
 const getFormFields = require('../../../lib/get-form-fields');
 

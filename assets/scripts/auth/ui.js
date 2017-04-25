@@ -3,13 +3,17 @@
 const store = require('../store');
 const showHeader = require('../templates/page-header.hbs');
 
+const homepageRender = () => {
+  $('.main-body').empty();
+  $('.main-body').append(showHeader);
+};
+
 const signInSuccess = () => {
   $('.sign-in-dropdown').hide();
   $('.sign-up-dropdown').hide();
   $('#exit').show();
   $('.change-password-dropdown').show();
-  $('.main-body').empty();
-  $('.main-body').append(showHeader);
+  homepageRender();
   $('input').val('');
   $('#blog-view').show();
   $('#blog-view-log-out').hide();
@@ -22,8 +26,7 @@ const signInFailure = () => {
 };
 
 const signUpSuccess = () => {
-  $('.main-body').empty();
-  $('.main-body').append(showHeader);
+  homepageRender();
   $('input').val('');
   alertify.success("Successfully Signed Up");
 };
@@ -33,8 +36,7 @@ const signUpFailure = () => {
 };
 
 const changePasswordSuccess = () => {
-  $('.main-body').empty();
-  $('.main-body').append(showHeader);
+  homepageRender();
   $('input').val('');
   alertify.success("Password Successfully Changed");
 };
@@ -44,8 +46,7 @@ const passwordChangeFailure = () => {
 };
 
 const signOutSuccess = () => {
-  $('.main-body').empty();
-  $('.main-body').append(showHeader);
+  homepageRender();
   $('.change-password-dropdown').hide();
   $('#exit').hide();
   $('.sign-in-dropdown').show();
@@ -67,4 +68,5 @@ module.exports = {
   passwordChangeFailure,
   signOutSuccess,
   signUpSuccess,
+  homepageRender
 };

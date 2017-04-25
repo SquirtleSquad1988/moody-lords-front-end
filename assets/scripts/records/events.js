@@ -4,7 +4,6 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const store = require('../store');
 const cart = require('../cart');
-const orders = require('../orders/ui');
 const orderEvents = require('../orders/events');
 const getFormFields = require('../../../lib/get-form-fields');
 
@@ -53,17 +52,14 @@ const removeRecordFromCart = function (event) {
   console.log(cart.getItems());
 };
 
-const onDeleteRecord = function(event){
+const onDeleteRecord = function (event, id) {
   event.preventDefault();
-  // let bookId = $('#delete-book-id').val();
-  // multiple ways to do everything.
-  // However prefer this way.
-  api.destroyRecord(+$(this).data('id'))
+  api.destroyRecord(id)
     .then(ui.onDeleteSuccess)
     .catch(ui.onError);
 };
 
-const onUpdateRecord = function(event){
+const onUpdateRecord = function (event) {
   event.preventDefault();
   let info = getFormFields(event.target);
   api.updateRecord(+$(this).data('id'), info)
@@ -99,7 +95,8 @@ const addHandlers = () => {
 module.exports = {
   onUpdateRecord,
   onCreateRecord,
+  addHandlers,
   onShowRecord,
   onDeleteRecord,
-  addHandlers
+  removeRecordFromCart
 };
