@@ -2,7 +2,7 @@
 <br>
 
 {{#each blogs as |blog|}}
-  <div>
+  {{!-- <div>
       <div class="blog-item" data-id="{{blog.id}}">
         <div class="blog-info" data-id="{{blog.id}}">
           <ul class="deets" data-id="{{blog.id}}">
@@ -16,9 +16,20 @@
             <span class="label label-success show-blog-comments-log-out" data-id="{{blog.id}}">Show Comments</span>
             <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
           </div>
-          {{!-- <div class="display-comments" data-id="{{blog.id}}"></div> --}}
+          <div class="display-comments" data-id="{{blog.id}}"></div>
         </div>
       </div>
     </div>
-    <div class="display-comments" data-id="{{blog.id}}"></div>
+    <div class="display-comments" data-id="{{blog.id}}"></div> --}}
+    <div class="jumbotron blog-item" data-id="{{blog.id}}">
+      <small class="blog-time">Last Updated: {{blog.updated_at}}</small>
+      <h3>{{blog.title}}</h3>
+      <p><pre>{{blog.body}}</pre></p>
+      <div class="show-hide-comments">
+        <span class="label label-success show-blog-comments-log-out" data-id="{{blog.id}}">Show Comments</span>
+        <span class="label label-info hide-blog-comments" data-id="{{blog.id}}">Hide Comments</span>
+      </div>
+      <br>
+      <div class="display-comments" data-id="{{blog.id}}"></div>
+    </div>
 {{/each}}
