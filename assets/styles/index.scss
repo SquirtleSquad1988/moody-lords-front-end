@@ -343,6 +343,13 @@ body {
   float: left;
 }
 
+.new-box {
+  background-color: white;
+  -webkit-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
 pre {
   width: 100%;
   height: 100%;
@@ -351,8 +358,9 @@ pre {
 }
 
 .blog-time {
-  // position: absolute;
-  // bottom: 30px;
+  // position: relative;
+  // bottom: 0px;
+  // top: -40px;
   // right: 30px;
   float: right;
   margin-bottom: 0px;
