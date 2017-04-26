@@ -313,6 +313,9 @@ body {
 
 
 .blog-item {
+  -webkit-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
   // border: 1px black;
   // display: block;
   // left: 0px;
