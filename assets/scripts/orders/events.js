@@ -22,13 +22,11 @@ const onCreateOrder = function (event) {
     .then((data) => {
       orderComplete.setId(data.order.id);
       stripe.onCreateCharge(event, data.order);
-      console.log(JSON.parse(data.order.records));
     })
     .catch(ui.onCreateError);
   } else {
     api.updateOrder(orderComplete.getId(), data)
     .then((data) => {
-      console.log(JSON.parse(data.order.records));
       let total = cart.getTotal();
       ui.showOrders(data, total);
       stripe.onCreateCharge(event, data.order);
@@ -65,7 +63,6 @@ const addHandlers = () => {
   $('body').on('click', '#cart-button', function(e) {
     e.preventDefault();
     onShowOrder();
-    console.log(cart.getTotal());
   });
   $('#shoppingCart').on('click', '#create-order', onCreateOrder);
 };

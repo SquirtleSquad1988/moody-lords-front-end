@@ -1,7 +1,6 @@
 'use strict';
 
 const api = require('./api.js');
-const ui = require('./ui.js');
 const cart = require('../cart');
 const ordersUI = require('../orders/ui');
 const ordersAPI = require('../orders/api');
@@ -19,7 +18,6 @@ const onCreateCharge = function (event, order) {
       let creds = {
         charge: {token: token.id},
       };
-      console.log(creds);
       api.createCharge(creds)
         .then(() => {
           let data = {
