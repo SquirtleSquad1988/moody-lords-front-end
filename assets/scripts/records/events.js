@@ -80,7 +80,7 @@ const addHandlers = () => {
       }
     });
     if (findRecord) {
-      alertify.error("There Are No Records for Sale");
+      alertify.error("You already have this record in your cart");
     } else {
       $(".buy-record[data-id='" + current +"']").addClass('hidden');
       $(".remove-record[data-id='" + current +"']").removeClass('hidden');
