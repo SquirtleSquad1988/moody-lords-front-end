@@ -295,27 +295,38 @@ body a:hover {
 /*-------------------------------*/
 
 body {
-  background: #556270;
-  background: -webkit-linear-gradient(to left, #556270 , #FF6B6B);
-  background: linear-gradient(to left, #556270 , #FF6B6B);
+  background: #4B4D52;
+  // background: -webkit-linear-gradient(to left, #556270 , #FF6B6B);
+  // background: linear-gradient(to left, #556270 , #FF6B6B);
 }
 
 .carousel {
-  border-top: 5px black;
-  border-left: 5px black;
-  border-right: 5px black;
-  border-bottom: 5px black;
+  border-top: 5px #F9A646;
+  border-left: 5px #F9A646;
+  border-right: 5px #F9A646;
+  border-bottom: 5px #F9A646;
   margin: 1px solid white;
   border-style: solid;
   position: relative;
 }
 
+.btn, {
+  background-color: #4B4D52;
+  border-color: #DE8642;
+  color: white;
+}
 
+.btn:hover, .btn:active, .btn:checked, .btn:focus {
+  background-color: #6E6E6E;
+  border-color: #DE8642;
+  color: white;
+}
 
 .blog-item {
-  -webkit-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
-  box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
+  -webkit-box-shadow: 14px 14px 5px 0px rgba(50, 50, 50, 1);
+  -moz-box-shadow: 14px 14px 5px 0px rgba(50, 50, 50, 1);
+  box-shadow: 14px 14px 5px 0px rgba(50, 50, 50, 1);
+  background-color: #D0CABF;
   // border: 1px black;
   // display: block;
   // left: 0px;
@@ -344,10 +355,10 @@ body {
 }
 
 .new-box {
-  background-color: white;
-  -webkit-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
-  -moz-box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
-  box-shadow: 15px 15px 5px 0px rgba(50, 50, 50, 0.5);
+  background-color: #B9B1A8;
+  -webkit-box-shadow: 14px 14px 5px 0px rgba(50, 50, 50, 1);
+  -moz-box-shadow: 14px 14px 5px 0px rgba(50, 50, 50, 1);
+  box-shadow: 14px 14px 5px 0px rgba(50, 50, 50, 1);
 }
 
 pre {
@@ -396,6 +407,23 @@ span:hover {
   border: 0px;
 }
 
+.page-header > p {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px;
+  border: 0px;
+  color: #FFF2E7;
+}
+
+.page-header > h1 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px;
+  border: 0px;
+  color: #DE8642;
+  font-size: 70px;
+}
+
 .del-comment,
 .del-disabled {
   float: left;
@@ -412,9 +440,10 @@ span:hover {
 footer {
   text-align: center;
   margin: 0 auto;
+  color: #FFF2E7;
 }
 
 h1 {
   font-family: 'Rubik Mono One', sans-serif;
-  color: black;
+  color: #DE8642;
 }
