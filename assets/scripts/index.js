@@ -30,6 +30,7 @@ $(() => {
     $('.sign-up-dropdown').hide();
     $('.sign-in-dropdown').hide();
   } else {
+    $('#list-records').hide();
     $('#blog-view').hide();
     $('#create-blog').hide();
     $('.change-password-dropdown').hide();

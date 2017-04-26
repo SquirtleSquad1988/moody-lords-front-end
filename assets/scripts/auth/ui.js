@@ -16,6 +16,7 @@ const signInSuccess = () => {
   homepageRender();
   $('input').val('');
   $('#blog-view').show();
+  $('#list-records').show();
   $('#blog-view-log-out').hide();
   $('#create-blog').show();
   alertify.success("Successfully Signed In");
@@ -47,6 +48,7 @@ const passwordChangeFailure = () => {
 
 const signOutSuccess = () => {
   homepageRender();
+  $('#list-records').hide();
   $('.change-password-dropdown').hide();
   $('#exit').hide();
   $('.sign-in-dropdown').show();
