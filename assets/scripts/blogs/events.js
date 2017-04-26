@@ -91,13 +91,13 @@ const addHandlers = () => {
   $(".main-body").on("click", ".create-comment", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
-    $(".edit-blog-form[data-id='" + current +"']").fadeToggle();
+    $(".edit-blog-form[data-id='" + current +"']").slideToggle();
   });
   // Show/Hide Button
   $(".main-body").on("click", ".hide-blog-comments", function (e) {
     e.preventDefault();
     let current = $(this).data('id');
-    $(".display-comments[data-id='" + current +"']").empty();
+    $(".display-comments[data-id='" + current +"']").hide().slideUp();
     $(".hide-blog-comments[data-id='" + current +"']").hide();
     $(".show-blog-comments-log-out[data-id='" + current +"']").show();
     $(".show-blog-comments[data-id='" + current +"']").show();
