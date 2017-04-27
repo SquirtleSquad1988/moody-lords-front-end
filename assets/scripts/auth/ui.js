@@ -63,9 +63,8 @@ const signOutSuccess = () => {
 };
 
 const signOutFailure = () => {
-  localStorage.removeItem('user');
-  store.user = null;
-  alertify.error("Something Went Wrong. Try Again.");
+  signOutSuccess();
+  alertify.error("Please Create A New Account");
 };
 
 module.exports = {
