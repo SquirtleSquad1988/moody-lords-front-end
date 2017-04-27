@@ -62,6 +62,12 @@ const signOutSuccess = () => {
   alertify.success("Successfully Signed Out");
 };
 
+const signOutFailure = () => {
+  localStorage.removeItem('user');
+  store.user = null;
+  alertify.error("Something Went Wrong. Try Again.");
+};
+
 module.exports = {
   changePasswordSuccess,
   signInSuccess,
@@ -70,5 +76,6 @@ module.exports = {
   passwordChangeFailure,
   signOutSuccess,
   signUpSuccess,
-  homepageRender
+  homepageRender,
+  signOutFailure
 };

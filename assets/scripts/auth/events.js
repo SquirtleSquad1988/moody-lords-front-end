@@ -53,8 +53,7 @@ const onSignOut = function (event) {
       return store;
     })
     .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
-    ;
+    .catch(ui.signOutFailure);
 };
 
 const addHandlers = () => {
