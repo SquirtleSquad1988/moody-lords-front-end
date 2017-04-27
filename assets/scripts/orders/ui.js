@@ -14,7 +14,8 @@ const showOrders = function (data, total) {
 };
 
 const clearCart = function () {
-  for (let i = 0; i < cart.items.length; i++) {
+  let cartLength = cart.items.length;
+  for (let i = 0; i < cartLength; i++) {
     cart.items.pop();
   }
   cart.items.pop();
