@@ -31,7 +31,7 @@ const onCreateCharge = function (event, order) {
               recordAPI.destroyRecord(cart.items[i].id);
             }
           };
-          deletePurchasedRecords();
+          // deletePurchasedRecords();
           ordersAPI.updateOrder(order.id, data);
           orderComplete.setId('');
           ordersUI.clearCart();
