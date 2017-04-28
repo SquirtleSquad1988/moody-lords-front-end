@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Moody Lords</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://raw.githubusercontent.com/SquirtleSquad1988/moody-lords-front-end/master/favicon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+  <!-- AlertifyJS-CSS stylesheet -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css" />
+  <!-- AlertifyJS-Semantic UI theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.9.0/css/themes/semantic.min.css" />
+
+  <!-- AlertifyJS script -->
+  <script src="//cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+</head>
+
+<body class="container-fluid">
+
+
+  <div id="wrapper">
+    <div class="overlay"></div>
+
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+      <ul class="nav sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="#">
+                   Moody Lords
+                </a>
+        </li>
+        <li class="homepage-direct">
+          <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+        </li>
+        <li id="blog-view">
+          <a href="#"><i class="glyphicon glyphicon-bold"></i> Blogs</a>
+        </li>
+        <li id="blog-view-log-out">
+          <a href="#"><i class="glyphicon glyphicon-eye-open"></i> View Blogs</a>
+        </li>
+        <li id="create-blog">
+          <a href="#"><i class="glyphicon glyphicon-pencil"></i> Create Blog</a>
+        </li>
+        <li id="list-records">
+          <a href="#"><i class="glyphicon glyphicon-cd"></i> Buy Records</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> User Stuff<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="dropdown-header">User Stuff</li>
+            <li class="sign-up-dropdown"><a href="#"><i class="glyphicon glyphicon-circle-arrow-up"></i> Sign Up</a></li>
+            <li class="sign-in-dropdown"><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Sign In</a></li>
+            <li class="change-password-dropdown"><a href="#"><i class="glyphicon glyphicon-lock"></i> Change Password</a></li>
+            <li>
+              <a id="exit" href="#"><i class="glyphicon glyphicon-sunglasses"></i> Sign Out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Shopping Cart -->
+    <button id="cart-button" class="btn" data-toggle="modal" data-target="#shoppingCart"><i class="glyphicon glyphicon-shopping-cart"> Shopping-Cart</i></button>
+    <!-- Modal -->
+    <div class="modal fade" id="shoppingCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Shopping Cart</h4>
+          </div>
+          <div class="cart-contents">
+            <!-- Cart content is rendered here -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <script src="https://checkout.stripe.com/checkout.js"></script>
+            <button type="button" id="create-order" class="btn btn-primary">Create Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+        <span class="hamb-top"></span>
+        <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+      </button>
+      <div class="container">
+        <div class="row">
+          <div class="main-body col-lg-8 col-lg-offset-2">
+            <!-- Content Gets Rendered Here -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+</body>
+
+</html>
